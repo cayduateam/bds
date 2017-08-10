@@ -13,7 +13,7 @@
 			<div class="item active" style="background-image: url(images/slider/slide3.jpg)"> 
 				<div class="carousel-caption"> 
 					<div> 
-						<h2 class="heading animated bounceInDown">KHU ĐÔ THỊ LÊ HỒNG PHONG I</h2> 
+						<h2 class="heading animated bounceInDown">KHU ĐÔ THỊ LÊ HỒNG PHONG II</h2> 
 						<p class="animated bounceInUp">Fully Professional one page template</p> 
 						<a class="btn btn-default slider-btn animated fadeIn" href="#">Xem ngay</a> 
 					</div> 

@@ -87,11 +87,11 @@
 <script src="js/bootstrap.min.js"></script>
 <script src="js/bootstrap-wysihtml5-0.0.2.min.js"></script>
 <script src="js/bootstrap-datepicker.min.js"></script>
-<script src="js/daterangepicker.js"></script>
+<!-- <script src="js/daterangepicker.js"></script> -->
 <script type="text/javascript" src="js/smoothscroll.js"></script> 
-<script type="text/javascript" src="js/jquery.isotope.min.js"></script>
+<!-- <script type="text/javascript" src="js/jquery.isotope.min.js"></script>
 <script type="text/javascript" src="js/jquery.prettyPhoto.js"></script> 
 <script type="text/javascript" src="js/jquery.parallax.js"></script> 
-<script type="text/javascript" src="js/main.js"></script> 
+<script type="text/javascript" src="js/main.js"></script>  -->
 </body>
 </html>
