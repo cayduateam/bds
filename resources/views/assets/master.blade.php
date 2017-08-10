@@ -33,22 +33,13 @@
 	<link rel="shortcut icon" href="favicon.ico" />
 
 	<base href="{{asset('')}}">
-	<base href="{{asset('')}}">
 	<!-- Bootstrap 3.3.7 -->
 	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/animate.min.css">
 	<!-- Font Awesome -->
 	<link rel="stylesheet" href="css/font-awesome.min.css">
-	<!-- Theme style -->
-	<link rel="stylesheet" href="dashboard/css/admin.css">
 	<link rel="stylesheet" href="css/bootstrap-datepicker.min.css">
-	<!-- Daterange picker -->
-	<link rel="stylesheet" href="css/daterangepicker.css">
-	<!-- bootstrap wysihtml5 - text editor -->
-	<link rel="stylesheet" href="css/bootstrap3-wysihtml5.css">
-	<link href="css/prettyPhoto.css" rel="stylesheet">
-	<link href="css/animate.css" rel="stylesheet">
-	<link href="css/main.css" rel="stylesheet">
-	<link href="css/responsive.css" rel="stylesheet">
+	@yield('style')
 	<!--[if lt IE 9]> <script src="js/html5shiv.js"></script>
 	<script src="js/respond.min.js"></script> <![endif]-->
 	<link rel="shortcut icon" href="images/ico/favicon.png">
@@ -65,7 +56,8 @@
   	<![endif]-->
   	<!-- Google Font -->
   	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-
+  	<!-- Theme style -->
+	<link rel="stylesheet" href="css/public.css">
 
 </head>
 <body id="body">
@@ -83,13 +75,7 @@
 <script src="js/jquery.js"></script>
 <!-- Bootstrap 3.3.7 -->
 <script src="js/bootstrap.min.js"></script>
-<script src="js/bootstrap-wysihtml5-0.0.2.min.js"></script>
-<script src="js/bootstrap-datepicker.min.js"></script>
-<script src="js/daterangepicker.js"></script>
-<script type="text/javascript" src="js/smoothscroll.js"></script> 
-<script type="text/javascript" src="js/jquery.isotope.min.js"></script>
-<script type="text/javascript" src="js/jquery.prettyPhoto.js"></script> 
-<script type="text/javascript" src="js/jquery.parallax.js"></script> 
-<script type="text/javascript" src="js/main.js"></script>
+<script src="js/js.js"></script>
+@yield('script')
 </body>
 </html>
