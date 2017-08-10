@@ -13,26 +13,27 @@
 			<div class="item active" style="background-image: url(images/slider/slide3.jpg)"> 
 				<div class="carousel-caption"> 
 					<div> 
-						<h2 class="heading animated bounceInDown">'Himu' Onepage HTML Template</h2> 
+						<h2 class="heading animated bounceInDown">KHU ĐÔ THỊ LÊ HỒNG PHONG I</h2> 
 						<p class="animated bounceInUp">Fully Professional one page template</p> 
-						<a class="btn btn-default slider-btn animated fadeIn" href="#">Get Started</a> 
+						<a class="btn btn-default slider-btn animated fadeIn" href="#">Xem ngay</a> 
 					</div> 
 				</div> 
 			</div>
 			<div class="item" style="background-image: url(images/slider/slide2.jpg)"> 
 				<div class="carousel-caption">
 					<div> 
-						<h2 class="heading animated bounceInDown">Get All in Onepage</h2> 
-						<p class="animated bounceInUp">Everything is outstanding </p> <a class="btn btn-default slider-btn animated fadeIn" href="#">Get Started</a> 
+						<h2 class="heading animated bounceInDown">Khu đô thị Venesia</h2> 
+						<p class="animated bounceInUp">Everything is outstanding </p> <a class="btn btn-default slider-btn animated fadeIn" href="#">Xem ngay</a> 
 					</div> 
 				</div> 
 			</div> 
 			<div class="item" style="background-image: url(images/slider/slide1.jpg)"> 
 				<div class="carousel-caption"> 
 					<div> 
-						<h2 class="heading animated bounceInRight">Fully Responsive Template</h2> 
+						<h2 class="heading animated bounceInRight">Tận hưởng cuộc sống tuyệt vời tại Venice phương Đông
+</h2> 
 						<p class="animated bounceInLeft">100% Responsive HTML template</p> 
-						<a class="btn btn-default slider-btn animated bounceInUp" href="#">Get Started</a> 
+						<a class="btn btn-default slider-btn animated bounceInUp" href="#">Xem ngay</a> 
 					</div> 
 				</div> 
 			</div>
