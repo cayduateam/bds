@@ -22,14 +22,13 @@
 			</div> 
 			<div class="collapse navbar-collapse"> 
 				<ul class="nav navbar-nav navbar-right"> 
-					<li class="scroll active"><a href="#navigation">Home</a></li> 
-					<li class="scroll"><a href="#about-us">About Us</a></li> 
-					<li class="scroll"><a href="#services">Services</a></li> 
-					<li class="scroll"><a href="#our-team">Our Team</a></li> 
-					<li class="scroll"><a href="#portfolio">Portfolio</a></li> 
-					<li class="scroll"><a href="#clients">Clients</a></li> 
-					<li class="scroll"><a href="#blog">Blog</a></li> 
-					<li class="scroll"><a href="#contact">Contact</a></li> 
+					<li class="scroll active"><a href="#navigation">Home</a></li>
+					<li class="scroll"><a href="#about-us">Giới thiệu</a></li>
+					<li class="scroll"><a href="#services">Nhà đất cho thuê</a></li>
+					<li class="scroll"><a href="#our-team">Dự án</a></li>
+					<li class="scroll"><a href="#clients">Khách hàng</a></li>
+					<li class="scroll"><a href="#blog">Blog BDS</a></li>
+					<li class="scroll"><a href="#contact">Liên hệ</a></li>
 				</ul> 
 			</div> 
 		</div> 
