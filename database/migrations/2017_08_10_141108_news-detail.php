@@ -13,7 +13,10 @@ class NewsDetail extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('news-detail', function (Blueprint $table) {
+            $table->increments('idNews');
+            $table->integer('idCat');
+        });
     }
 
     /**
@@ -23,6 +26,6 @@ class NewsDetail extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('news-detail');
     }
 }

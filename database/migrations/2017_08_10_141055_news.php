@@ -13,7 +13,22 @@ class News extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('news', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('idCat');
+            $table->string('title');
+            $table->string('alias');
+            $table->text('summary');
+            $table->text('content');
+            $table->string('image-slide');
+            $table->string('image');
+            $table->integer('hit');
+            $table->text('metakey');
+            $table->text('metades');
+            $table->text('metarobot');
+            $table->tinyInteger('status');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +38,6 @@ class News extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('news');
     }
 }

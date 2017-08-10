@@ -13,7 +13,16 @@ class Slide extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('slide', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('title');
+            $table->string('alias');
+            $table->string('link');
+            $table->text('note');
+            $table->tinyInteger('status');
+            $table->integer('hit');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +32,6 @@ class Slide extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('slide');
     }
 }

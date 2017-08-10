@@ -15,8 +15,18 @@ class Product extends Migration
     {
         Schema::create('product', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('idCat');
             $table->string('name');
+            $table->string('alias');
+            $table->string('sku');
             $table->string('address');
+            $table->text('note');
+            $table->text('description');
+            $table->text('special');
+            $table->integer('price');
+            $table->integer('price-special');
+            $table->tinyInteger('status');
+            $table->integer('view');
             $table->timestamps();
         });
     }
