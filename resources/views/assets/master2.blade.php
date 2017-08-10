@@ -39,6 +39,7 @@
 	<!-- Font Awesome -->
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/bootstrap-datepicker.min.css">
+	@jield('style')
 	<!--[if lt IE 9]> <script src="js/html5shiv.js"></script>
 	<script src="js/respond.min.js"></script> <![endif]-->
 	<link rel="shortcut icon" href="images/ico/favicon.png">
