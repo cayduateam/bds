@@ -1,4 +1,4 @@
-@extends('assets.master')
+@extends('assets.master2')
 
 @section('content')
 index2
