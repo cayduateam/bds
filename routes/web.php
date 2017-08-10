@@ -12,9 +12,20 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index.index');
 });
 
-Route::get('test',function(){
-	echo 'test here';
+//Dashboard
+Route::get('dashboard/login','DashboardController@login');
+Route::post('dashboard/postLogin','DashboardController@postLogin')->name('adminPostLogin');
+Route::get('dashboard/logout','DashboardController@logout');
+
+Route::group(['prefix' => 'dashboard','middleware' => 'AdminLoginMiddle'],function(){
+	Route::get('index','DashboardController@index');
+	Route::group(['prefix' => 'slide'],function(){
+		Route::get('list','SlideController@list');
+		Route::get('add','SlideController@addNew');
+		Route::get('edit/{idSlide}','SlideController@getEdit');
+		Route::post('edit/{idSlide}','SlideController@postEdit');
+	});
 });

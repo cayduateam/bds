@@ -10,4 +10,13 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+
+    public function __construct(){
+    	$this->login();
+    }
+    public function login(){
+    	if(Auth::check()){
+    		view()->share('admin_user_login', Auth::user());
+    	}
+    }
 }
