@@ -58,7 +58,7 @@
 	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png"> 
 	<link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
 
-	
+
   	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   	<!--[if lt IE 9]>
@@ -82,7 +82,7 @@
 
 
 <!-- jQuery 3 -->
-<script src="js/jquery.min.js"></script>
+<script src="js/jquery.js"></script>
 <!-- Bootstrap 3.3.7 -->
 <script src="js/bootstrap.min.js"></script>
 <script src="js/bootstrap-wysihtml5-0.0.2.min.js"></script>
