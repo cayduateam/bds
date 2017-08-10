@@ -33,13 +33,13 @@
 	<link rel="shortcut icon" href="favicon.ico" />
 
 	<base href="{{asset('')}}">
-	<base href="{{asset('')}}">
 	<!-- Bootstrap 3.3.7 -->
 	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/animate.min.css">
 	<!-- Font Awesome -->
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/bootstrap-datepicker.min.css">
-	@jield('style')
+	@yield('style')
 	<!--[if lt IE 9]> <script src="js/html5shiv.js"></script>
 	<script src="js/respond.min.js"></script> <![endif]-->
 	<link rel="shortcut icon" href="images/ico/favicon.png">
@@ -75,5 +75,7 @@
 <script src="js/jquery.js"></script>
 <!-- Bootstrap 3.3.7 -->
 <script src="js/bootstrap.min.js"></script>
+<script src="js/js.js"></script>
+@yield('script')
 </body>
 </html>

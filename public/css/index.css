@@ -1,1 +1,81 @@
-index.css
+/*slider */
+.owl-prev{
+    left: 10px!important;
+    position: absolute;
+    top: 50%;
+}
+.owl-next{
+    right: 10px;
+    position: absolute;
+    top: 50%;
+}
+.article{
+    height:30vmax;
+}
+.content-slider{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 120%;
+    width: 90%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.content-slider h3{
+    color: #d3fff8;
+    display: inline-block;
+    font-family: roboto;
+    font-size: 3vmax;
+    text-shadow: none;
+    text-transform: uppercase;
+}
+.owl-carousel{border-bottom: 1vmin solid red;}
+/*end slider*/
+
+/*service*/
+.service{
+    background: #f9f9f9;
+    margin-top: 2vmin;
+}
+.service .title{
+    color: #666666;
+    display: inline-block;
+    font-size: 32px;
+    font-weight: 600;
+    padding-bottom: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    position: relative;
+}
+.service .title:before{
+    color: #fc7700;
+    content: "||";
+    left: -40px;
+    position: absolute;
+    top: 0;
+}
+.service .title:after{
+    color: #fc7700;
+    content: "||";
+    position: absolute;
+    right: -40px;
+    top: -2px;
+}
+.service ul lifirst-child {
+    margin-top: 0;
+}
+.service ul li{
+    list-style: none;
+    margin-top:25px;
+    padding: 20px 45px;
+    position: relative;
+    text-align: justify;
+    background: #f0f0f0;
+}
+/*end service*/
+
+.home1{
+    height:200px;
+}
+
+
