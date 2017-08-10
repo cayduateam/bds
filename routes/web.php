@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('index.index');
 });
 
+Route::get('/index2', function () {
+    return view('index.index2');
+});
+
 //Dashboard
 Route::get('dashboard/login','DashboardController@login');
 Route::post('dashboard/postLogin','DashboardController@postLogin')->name('adminPostLogin');
