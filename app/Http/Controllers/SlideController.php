@@ -6,5 +6,8 @@ use Illuminate\Http\Request;
 
 class SlideController extends Controller
 {
-    //
+    public function getList(){
+        echo 'here';
+
+    }
 }

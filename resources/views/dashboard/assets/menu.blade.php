@@ -29,7 +29,7 @@
             <a href="javascript:;" data-toggle="collapse" data-target="#listnews" class="" aria-expanded="true">Sản phẩm <i class="fa fa-fw fa-caret-down"></i></a>
             <ul id="listnews" class="collapse sub-menu" aria-expanded="true" style="">
                 <li>
-                    <a href="#">Danh Sách</a>
+                    <a href="dashboard/news/list">Danh Sách</a>
                 </li>
                 <li>
                     <a href="#">Thêm</a>

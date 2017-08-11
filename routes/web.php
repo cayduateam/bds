@@ -20,12 +20,12 @@ Route::get('dashboard/login','DashboardController@login');
 Route::post('dashboard/postLogin','DashboardController@postLogin')->name('adminPostLogin');
 Route::get('dashboard/logout','DashboardController@logout');
 
-Route::group(['prefix' => 'dashboard','middleware' => 'AdminLoginMiddle'],function(){
+Route::group(['prefix' => 'dashboard'],function(){
 	Route::get('index','DashboardController@index');
 	Route::group(['prefix' => 'news'],function(){
-		Route::get('list','SlideController@list');
-		Route::get('add','SlideController@addNew');
-		Route::get('edit/{idSlide}','SlideController@getEdit');
-		Route::post('edit/{idSlide}','SlideController@postEdit');
+		Route::get('list','Dashboard\NewsController@getList');
+		Route::get('add','Dashboard\NewsController@addNew');
+		Route::get('edit/{idNews}','Dashboard\NewsController@getEdit');
+		Route::post('edit/{idNews}','Dashboard\NewsController@postEdit');
 	});
 });
