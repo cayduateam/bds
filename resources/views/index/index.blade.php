@@ -46,19 +46,20 @@
 	{{--end slider--}}
 
 	{{--service--}}
-	<div class="text-center service">
+	<div class="text-center service container">
 		<h2 class="title animated wobble">DỊCH VỤ CỦA CHÚNG TÔI</h2>
 		<div class="row">
-			<div class="col-md-6">
+			<div class="col-md-6 service-right">
 				<ul class="list-1 list-left right wow bounceInLeft animated">
-					<li><span class="circle"><i class="fa fa-universal-access" aria-hidden="true"></i></span><span class="autoLeft fixTop">Dịch vụ1<strong>aaaaaaa</strong></span><div class="clear"></div></li>
-					<li><span class="circle"><i class="fa fa-diamond" aria-hidden="true"></i></span><span class="autoLeft fixTop">Dịch vụ2 <strong>bbbbbbbbb</strong></span><div class="clear"></div></li>
+					<li><span class="circle"><i class="fa fa-universal-access" aria-hidden="true"></i></span><span class="autoLeft fixTop">Chuyên cung cấp các dịch vụ kinh doanh, môi giới, thẩm định, quảng cáo, đấu giá bất động sản.</span><div class="clear"></div></li>
+					<li><span class="circle"><i class="fa fa-diamond" aria-hidden="true"></i></span><span class="autoLeft fixTop">Tư vấn pháp lý, tín dụng, thanh toán chuyển nhượng bất động sản.</span><div class="clear"></div></li>
 				</ul>
 			</div>
 			<div class="col-md-6">
 				<ul class="list-1 list-right animated bounceInRight">
-					<li><span class="circle"><i class="fa fa-cubes" aria-hidden="true"></i></span><span class="autoLeft fixTop">Dịch vụ3 <strong>222222</strong></span><div class="clear"></div></li>
-
+					<li><span class="circle"><i class="fa fa-users" aria-hidden="true"></i></span><span class="autoLeft fixTop">Tư vấn thiết kế, nội thất dân dụng.</strong></span><div class="clear"></div></li>
+				</ul>
+				<ul class="list-1 list-right animated bounceInRight">
 					<li><span class="circle"><i class="fa fa-users" aria-hidden="true"></i></span><span class="autoLeft fixTop">Dịch vụ4 <strong>3333333333</strong></span><div class="clear"></div></li>
 				</ul>
 			</div>
@@ -69,12 +70,79 @@
 
 	{{--search with parallax --}}
 	<div class="searchbds parallax" data-speed="0.5" style="background: url('images/search-background.jpg') 50% -79.5px no-repeat;">
-		<form class="searchdbs">
 
-		</form>
+        <div class="container searchbds-container">
+            <div class="row">
+                <div class="col-md-5 col-xs-12 formdbs-container">
+                    <div class="formbds-content">
+                        <h3>Tìm kiếm bất động sản</h3>
+                        <form  class="form-horizontal searchdbs-form">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">Loại hình</label>
+                                <div class="col-sm-8">
+                                    <select class="form-control">
+                                        <option>Dự án</option>
+                                        <option>Nhà đất phố</option>
+                                        <option>Cho thuê</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">Chi tiết</label>
+                                <div class="col-sm-8">
+                                    <select class="form-control">
+                                        <option>Căn hộ</option>
+                                        <option>Đất nền</option>
+                                        <option>Nhà ở xã hội</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">Phường xã</label>
+                                <div class="col-sm-8">
+                                    <select class="form-control">
+                                        <option>--All--</option>
+                                        <option>Thành phố Nha Trang</option>
+                                        <option>Diên Khánh</option>
+                                        <option>Xương Huân</option>
+                                        <option>VĨnh Ngọc</option>
+                                        <option>Phước Hải</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">Giá tiền</label>
+                                <div class="col-sm-8">
+                                    <select class="form-control">
+                                        <option>--All--</option>
+                                        <option>Dưới 1 tỷ</option>
+                                        <option>Từ 2-5 tỷ</option>
+                                        <option>Trên 5 tỷ</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <button type="submit" class="btn btn-default">Sign in</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-7 col-xs-12 searchbds-right">
+                    <ul class="list-1 list-left right wow bounceInLeft animated">
+                        <li><h4 class="autoLeft fixTop red">Luôn mang lại chất lượng, giá trị của từng sản phẩm, dịch vụ</h4><div class="clear"></div></li>
+                        <li><h4 class="autoLeft fixTop red">Uy tín doanh nghiệp và hiệu quả của chất lượng sản phẩm luôn được đặt lên hàng đầu</h4><div class="clear"></div></li>
+                        <li><h4 class="autoLeft fixTop red">Sống và làm việc theo nguyên tắc “Cả hai cùng thắng”</h4><div class="clear"></div></li>
+                        <li><h4 class="autoLeft fixTop red">Đối với Cổ đông: Tối đa hóa giá trị đầu tư</h4><div class="clear"></div></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
 	</div>
 	{{--end search with parallax --}}
 
+    {{--lastest news--}}
 
-	<div style="min-height:1000px">index2</div>
+    {{--end lastest news--}}
 @endsection

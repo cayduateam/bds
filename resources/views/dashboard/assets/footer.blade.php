@@ -1,7 +1,3 @@
-<footer class="main-footer">
-<div class="pull-right hidden-xs">
-  <b>Version</b> 2.4.0
-</div>
-<strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">LyNguyen team</a>.</strong> All rights
-reserved.
-</footer>
+{{--<footer id="footer">--}}
+  {{--<strong>Copyright © 2017 - <a href="www.bdsnhatrangonline.com">BĐS Nha Trang Online @team 2017 Thuy</a></strong> All rights--}}
+{{--</footer>--}}

@@ -36,6 +36,7 @@
 	<!-- Bootstrap 3.3.7 -->
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/animate.min.css">
+	<link rel="stylesheet" href="css/reset.css">
 	<!-- Font Awesome -->
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/bootstrap-datepicker.min.css">
@@ -61,6 +62,14 @@
 
 </head>
 <body id="body">
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.10&appId=582114615190679";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
 @include('assets.header')
 
 <section class="main_container">

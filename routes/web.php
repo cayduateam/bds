@@ -22,7 +22,7 @@ Route::get('dashboard/logout','DashboardController@logout');
 
 Route::group(['prefix' => 'dashboard','middleware' => 'AdminLoginMiddle'],function(){
 	Route::get('index','DashboardController@index');
-	Route::group(['prefix' => 'slide'],function(){
+	Route::group(['prefix' => 'news'],function(){
 		Route::get('list','SlideController@list');
 		Route::get('add','SlideController@addNew');
 		Route::get('edit/{idSlide}','SlideController@getEdit');
