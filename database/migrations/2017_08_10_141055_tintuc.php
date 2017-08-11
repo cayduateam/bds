@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class News extends Migration
+class Tintuc extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class News extends Migration
      */
     public function up()
     {
-        Schema::create('news', function (Blueprint $table) {
+        Schema::create('tintuc', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('idCat');
             $table->string('title');
@@ -38,6 +38,6 @@ class News extends Migration
      */
     public function down()
     {
-        Schema::drop('news');
+        Schema::drop('tintuc');
     }
 }

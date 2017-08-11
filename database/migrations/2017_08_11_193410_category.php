@@ -13,7 +13,19 @@ class Category extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('news', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name');
+            $table->string('alias');
+            $table->text('summary');
+            $table->string('image');
+            $table->integer('hit');
+            $table->text('metakey');
+            $table->text('metades');
+            $table->text('metarobot');
+            $table->tinyInteger('status');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +35,6 @@ class Category extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('category');
     }
 }
