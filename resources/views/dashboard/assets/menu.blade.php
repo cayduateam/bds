@@ -26,6 +26,9 @@
             <a href="#">Danh mục tin</a>
         </li>
         <li>
+            <a href="{{route('getaddNewsCat')}}">Thêm Danh mục tin</a>
+        </li>
+        <li>
             <a href="javascript:;" data-toggle="collapse" data-target="#listnews" class="" aria-expanded="true">Sản phẩm <i class="fa fa-fw fa-caret-down"></i></a>
             <ul id="listnews" class="collapse sub-menu" aria-expanded="true" style="">
                 <li>

@@ -36,11 +36,11 @@ Route::group(['prefix' => 'dashboard'],function(){
         //admin new category
         Route::get('list','NewsController@getListCat');
 
-        Route::get('add','NewsController@getaddNewsCat')->name('getaddNewsCat');
-        Route::post('add',['as' => 'postaddNewsCat','uses' => 'NewsController@postaddNewsCat']);
+        Route::get('add-category','NewsController@getaddNewsCat')->name('getaddNewsCat');
+        Route::post('add-category',['as' => 'postaddNewsCat','uses' => 'NewsController@postaddNewsCat']);
 
-        Route::get('edit/{idCat}','NewsController@editCat');
-        Route::post('edit/{idCat}','NewsController@postEditCat');
+        Route::get('edit-category/{idCat}','NewsController@editCat');
+        Route::post('edit-category/{idCat}','NewsController@postEditCat');
         //admin new category end
 	});
 });

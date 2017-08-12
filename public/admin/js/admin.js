@@ -5,4 +5,11 @@ $(document).ready(function(){
         else return false;
     }
     $('.summernote').summernote();
+
+    $('.summernote_large').summernote({
+        height: 300,
+        focus: true
+    });
+
+    $(".checkonoff").bootstrapSwitch();
 });
