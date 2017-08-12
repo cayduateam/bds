@@ -17,4 +17,16 @@ class NewsController extends Controller
         $category = Category::pluck('name');
         return view('dashboard.news.add',['category' => $category]);
     }
+    public function postaddNews(){
+//        $this->validate($request,[
+//            'title' => 'required|min:5|unique:news,title' //title min 5 ky tu va co ten khong trung nhau
+//        ],[
+//            'title.required' => 'Vui lòng nhập tiêu đề',
+//            'title.unique' => 'Tiêu đề đã tồn tại',
+//            'title.min' => 'Tiêu đề quá ngắn'
+//        ]);
+
+//        $news = new News;
+//        $news->title = $request->title;
+    }
 }

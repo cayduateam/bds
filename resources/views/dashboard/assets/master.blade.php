@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="css/animate.min.css">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="css/font-awesome.min.css">
-  <link rel="stylesheet" href="css/bootstrap-datepicker.min.css">
+  <link rel="stylesheet" href="summernote/summernote.css">
   @yield('style')
 <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
@@ -40,6 +40,7 @@
 <!-- Bootstrap 3.3.7 -->
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery.validate.min.js"></script>
+<script src="summernote/summernote.min.js"></script>
 @yield('script')
 <script src="admin/js/admin.js"></script>
 </body>

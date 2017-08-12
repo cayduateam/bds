@@ -23,12 +23,24 @@ Route::get('dashboard/logout','DashboardController@logout');
 Route::group(['prefix' => 'dashboard'],function(){
 	Route::get('index','DashboardController@index');
 	Route::group(['prefix' => 'news'],function(){
-		Route::get('list','NewsController@getList');
+		//admin news
+	    Route::get('list','NewsController@getList');
 
 		Route::get('add','NewsController@getaddNews')->name('getaddNews');
-        Route::post('add','NewsController@postaddNews');
+        Route::post('add',['as' => 'postaddNews','uses' => 'NewsController@postaddNews']);
 
 		Route::get('edit/{idNews}','NewsController@edit');
 		Route::post('edit/{idNews}','NewsController@postEdit');
+        //admin news end
+
+        //admin new category
+        Route::get('list','NewsController@getListCat');
+
+        Route::get('add','NewsController@getaddNewsCat')->name('getaddNewsCat');
+        Route::post('add',['as' => 'postaddNewsCat','uses' => 'NewsController@postaddNewsCat']);
+
+        Route::get('edit/{idCat}','NewsController@editCat');
+        Route::post('edit/{idCat}','NewsController@postEditCat');
+        //admin new category end
 	});
 });
