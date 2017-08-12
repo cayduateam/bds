@@ -34,12 +34,13 @@ Route::group(['prefix' => 'dashboard'],function(){
         //admin news end
 
         //admin new category
-        Route::get('list','NewsController@getListCat');
+        Route::get('listCat','NewsController@getListCat')->name('getListCat');
 
         Route::get('add-category','NewsController@getaddNewsCat')->name('getaddNewsCat');
         Route::post('add-category',['as' => 'postaddNewsCat','uses' => 'NewsController@postaddNewsCat']);
 
-        Route::get('edit-category/{idCat}','NewsController@editCat');
+        Route::get('edit-category/{idCat}','NewsController@editCat')->name('editCat');
+        Route::post('edit-category/{idCat}','NewsController@postEditCat');
         Route::post('edit-category/{idCat}','NewsController@postEditCat');
         //admin new category end
 	});

@@ -23,7 +23,7 @@
     <h4>TIN TỨC</h4>
     <ul class="nav navbar-nav side-nav menu-nav">
         <li>
-            <a href="#">Danh mục tin</a>
+            <a href="{{route('getListCat')}}">Danh mục tin</a>
         </li>
         <li>
             <a href="{{route('getaddNewsCat')}}">Thêm Danh mục tin</a>

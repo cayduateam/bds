@@ -10,9 +10,8 @@
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>Title</th>
-                        <th class="text-center">Hit</th>
-                        <th>Is Slide</th>
+                        <th>Name</th>
+                        <th>Status</th>
                         <th class="text-center">Date</th>
                         <th class="text-center">Edit</th>
                         <th class="text-center">Delete</th>
@@ -20,30 +19,45 @@
                 </thead>
                 <tbody>
                     {{$stt=null}}
-                    @foreach($news as $val)
-                    <tr>
-                        <th>{{$stt+=1}}</th>
-                        <td>{{$val->title}}</td>
-                        <td class="text-center">{{$val->hit}}</td>
-                        <td class="text-center">{{$val->image_slide!=null?'Yes':"NO"}}</td>
-                        {{--<td>{{$val->category->name}}</td>--}}
-                        <td class="text-center">{{$val->created_at}}</td>
-                        <td class="text-center">
-                            <a href="#">
-                                <span class="glyphicon glyphicon-edit"></span>
-                            </a>
-                        </td>
-                        <td class="text-center">
-                            <a href="#">
-                                <span class="glyphicon glyphicon-remove"></span>
-                            </a>
-                        </td>
-                    </tr>
+                    @foreach($data as $parent)
+                        <tr>
+                            <th>{{$stt+=1}}</th>
+                            <td>{{$parent['name']}}</td>
+                            <td class="text-center">{{$parent['status']}}</td>
+                            <td class="text-center">{{$parent['created_at']}}</td>
+                            <td class="text-center">
+                                <a href="dashboard/news/edit-category/{{$parent['id']}}">
+                                    <span class="glyphicon glyphicon-edit"></span>
+                                </a>
+                            </td>
+                            <td class="text-center">
+                                <a href="dashboard/news/delete-category/{{$parent['id']}}">
+                                    <span class="glyphicon glyphicon-remove"></span>
+                                </a>
+                            </td>
+                        </tr>
+                        @foreach($parent['sub'] as $key => $sub)
+                            <tr>
+                                <th></th>
+                                <td class="sub">{{$sub['name']}}</td>
+                                <td class="text-center">{{$sub['status']}}</td>
+                                <td class="text-center">{{$sub['created_at']}}</td>
+                                <td class="text-center">
+                                    <a href="dashboard/news/edit-category/{{$key}}">
+                                        <span class="glyphicon glyphicon-edit"></span>
+                                    </a>
+                                </td>
+                                <td class="text-center">
+                                    <a href="dashboard/news/delete-category/{{$key}}">
+                                        <span class="glyphicon glyphicon-remove"></span>
+                                    </a>
+                                </td>
+                            </tr>
+                        @endforeach
                     @endforeach
-
                 </tbody>
             </table>
-            <div class="text-center">{{$news->links()}}</div>
+            {{--<div class="text-center">{{$news->links()}}</div>--}}
 		</div>
 	</div>
 @endsection

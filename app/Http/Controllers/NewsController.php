@@ -32,6 +32,27 @@ class NewsController extends Controller
 
 
     //section category
+    public function getListCat(){
+        $parent = Category::where('parent_id',0)->get();
+        $data=[];
+        foreach($parent as $pa){
+            $data[$pa->id]['id'] = $pa->id;
+            $data[$pa->id]['name'] = $pa->name;
+            $data[$pa->id]['alias'] = $pa->alias;
+            $data[$pa->id]['status'] = $pa->status;
+            $data[$pa->id]['created_at'] = $pa->created_at;
+
+            $submenu = Category::where('parent_id',$pa->id)->get();
+            foreach($submenu as $sub){
+                $data[$pa->id]['sub'][$sub->id]['name'] = $sub->name;
+                $data[$pa->id]['sub'][$sub->id]['alias'] = $sub->alias;
+                $data[$pa->id]['sub'][$sub->id]['status'] = $sub->status;
+                $data[$pa->id]['sub'][$sub->id]['created_at'] = $sub->created_at;
+            }
+        }
+        return view('dashboard.category.list',['data' => $data]);
+    }
+
     public function getaddNewsCat(){
         $parent = Category::select('id','name','alias')->where('parent_id',0)->get();
         return view('dashboard.category.add',['parent' => $parent]);
