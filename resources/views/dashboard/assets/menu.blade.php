@@ -32,7 +32,7 @@
                     <a href="dashboard/news/list">Danh Sách</a>
                 </li>
                 <li>
-                    <a href="#">Thêm</a>
+                    <a href="{{route('getaddNews')}}">Thêm</a>
                 </li>
             </ul>
         </li>

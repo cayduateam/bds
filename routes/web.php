@@ -23,9 +23,12 @@ Route::get('dashboard/logout','DashboardController@logout');
 Route::group(['prefix' => 'dashboard'],function(){
 	Route::get('index','DashboardController@index');
 	Route::group(['prefix' => 'news'],function(){
-		Route::get('list','Dashboard\NewsController@getList');
-		Route::get('add','Dashboard\NewsController@addNew');
-		Route::get('edit/{idNews}','Dashboard\NewsController@getEdit');
-		Route::post('edit/{idNews}','Dashboard\NewsController@postEdit');
+		Route::get('list','NewsController@getList');
+
+		Route::get('add','NewsController@getaddNews')->name('getaddNews');
+        Route::post('add','NewsController@postaddNews');
+
+		Route::get('edit/{idNews}','NewsController@edit');
+		Route::post('edit/{idNews}','NewsController@postEdit');
 	});
 });

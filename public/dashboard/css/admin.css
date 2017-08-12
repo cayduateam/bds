@@ -188,9 +188,11 @@ a:focus {
 .menu-container{
   background-color: #222d32;
   color: #fff;
-  margin-bottom: -5000px;
-  padding-bottom: 5000px;
+  margin-bottom: -1000px;
+  padding-bottom: 1000px;
+    padding-top:20px;
 }
+.content-container{padding-top:20px;}
 .menu-nav li{width: 100%;}
 .menu-nav .sub-menu li{
   list-style:none;

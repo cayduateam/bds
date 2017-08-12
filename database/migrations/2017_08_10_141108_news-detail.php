@@ -14,8 +14,9 @@ class NewsDetail extends Migration
     public function up()
     {
         Schema::create('news-detail', function (Blueprint $table) {
-            $table->increments('idNews');
-            $table->integer('idCat');
+            $table->interger('news_id');
+            $table->integer('category_id');
+            $table->unique(['news_id', 'category_id']);
         });
     }
 
