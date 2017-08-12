@@ -23,10 +23,10 @@
     <h4>TIN TỨC</h4>
     <ul class="nav navbar-nav side-nav menu-nav">
         <li>
-            <a href="{{route('getListCat')}}">Danh mục tin</a>
+            <a href="">Danh mục tin</a>
         </li>
         <li>
-            <a href="{{route('getaddNewsCat')}}">Thêm Danh mục tin</a>
+            <a href="">Thêm Danh mục tin</a>
         </li>
         <li>
             <a href="javascript:;" data-toggle="collapse" data-target="#listnews" class="" aria-expanded="true">Sản phẩm <i class="fa fa-fw fa-caret-down"></i></a>
@@ -35,7 +35,7 @@
                     <a href="dashboard/news/list">Danh Sách</a>
                 </li>
                 <li>
-                    <a href="{{route('getaddNews')}}">Thêm</a>
+                    <a href="">Thêm</a>
                 </li>
             </ul>
         </li>
