@@ -16,7 +16,7 @@
 <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
   <!-- Theme style -->
-  <link rel="stylesheet" href="dashboard/css/admin.css">
+  <link rel="stylesheet" href="admin/css/admin.css">
 </head>
 <body>
 <section class="main_container wrapper" id="page-wrapper">
@@ -39,7 +39,8 @@
 <script src="js/jquery.min.js"></script>
 <!-- Bootstrap 3.3.7 -->
 <script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.validate.min.js"></script>
 @yield('script')
-<script src="dashboard/js/admin.js"></script>
+<script src="admin/js/admin.js"></script>
 </body>
 </html>

@@ -34,9 +34,10 @@
 
 	<base href="{{asset('')}}">
 	<!-- Bootstrap 3.3.7 -->
+    <link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/animate.min.css">
-	<link rel="stylesheet" href="css/reset.css">
+
 	<!-- Font Awesome -->
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/bootstrap-datepicker.min.css">

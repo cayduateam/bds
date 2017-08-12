@@ -14,6 +14,7 @@ class NewsController extends Controller
         return view('dashboard.news.list',['news' => $news]);
     }
     public function getaddNews(){
-        return view('dashboard.news.add');
+        $category = Category::pluck('name');
+        return view('dashboard.news.add',['category' => $category]);
     }
 }
