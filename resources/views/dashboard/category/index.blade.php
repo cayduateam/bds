@@ -1,9 +1,9 @@
 @extends('dashboard.assets.master')
 @section('content')
-	<div class="row header headnews">
+	<div class="row header">
 		<div class="col-md-10"><h1>List</h1></div>
 		<div class="col-md-2">
-			<a href="category/create"><button type="button" class="btn btn-primary">Add New</button></a>
+			<a href="{{route('category.create')}}"><button type="button" class="btn btn-primary">Add New</button></a>
 		</div>
 	</div>
 	@include('dashboard.assets.message')

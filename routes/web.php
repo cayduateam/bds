@@ -20,9 +20,9 @@ Route::get('dashboard/login','DashboardController@login');
 Route::post('dashboard/postLogin','DashboardController@postLogin')->name('adminPostLogin');
 Route::get('dashboard/logout','DashboardController@logout');
 
-Route::group(['prefix' => 'dashboard'],function(){
+Route::group(['prefix' => 'dashboard','middleware' => 'AdminLoginMiddle'],function(){
 	Route::get('index','DashboardController@index');
-    Route::resource('news','NewsController');
+//    Route::resource('news','NewsController');
     Route::resource('category','CategoryController');
 
 });

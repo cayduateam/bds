@@ -15,5 +15,3 @@
 
 	{!! Form::close() !!}
 @endsection
-
-<?php
