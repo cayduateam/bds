@@ -37,32 +37,35 @@
 	{{session('message')}}
 @endif
 
-<div class="login-box">
-  <div class="login-logo">
-    Login
-  </div>
-  <!-- /.login-logo -->
-  <div class="login-box-body">
-    <p class="login-box-msg">Sign in to start your MONEY</p>
+<div class="container">
+  <div class="row">
+  <div class="login-box col-md-4 col-md-offset-4 col-xs-12">
+    <div class="login-logo">
+      Login
+    </div>
+    <!-- /.login-logo -->
+    <div class="login-box-body">
+      <p class="login-box-msg">Sign in to start your MONEY</p>
 
-    <form action="{{route('adminPostLogin')}}" method="post">
-    	{{ csrf_field() }}
-      <div class="form-group has-feedback">
-        <input type="username" class="form-control" placeholder="Username" name="username">
-        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-      </div>
-      <div class="form-group has-feedback">
-        <input type="password" class="form-control" placeholder="Password" name="password">
-        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-      </div>
-      <div class="row">
-          <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
-      </div>
-    </form>
+      <form action="{{route('adminPostLogin')}}" method="post">
+        {{ csrf_field() }}
+        <div class="form-group has-feedback">
+          <input type="username" class="form-control" placeholder="Username" name="username">
+          <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+        </div>
+        <div class="form-group has-feedback">
+          <input type="password" class="form-control" placeholder="Password" name="password">
+          <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+        </div>
+        <div class="row">
+            <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+        </div>
+      </form>
+    </div>
+    <!-- /.login-box-body -->
   </div>
-  <!-- /.login-box-body -->
+  </div>
 </div>
-
 <!-- jQuery 3 -->
 <script src="js/jquery.min.js"></script>
 <!-- Bootstrap 3.3.7 -->
