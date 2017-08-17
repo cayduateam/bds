@@ -189,6 +189,7 @@ a:focus {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff', GradientType=1 );
 }
 
+
 .login-box{
   position: absolute;
   top: 50%;
@@ -197,7 +198,6 @@ a:focus {
   margin: 0;
   text-align: center;
 }
-
 /*header*/
 .admin-header{
   position: relative;

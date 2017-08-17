@@ -8,6 +8,12 @@ use App\Category;
 
 class CategoryController extends Controller
 {
+    public function __construct(){
+        $task = null;
+        if(strpos(\route::currentRouteName(), 'create') !== false) $task = 'Create';
+        if(strpos(\route::currentRouteName(), 'edit') !== false) $task = 'Edit';
+        view()->share('task', $task);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -15,8 +21,23 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $category = Category::all();
-        return view('dashboard.category.index',compact('category'));
+        $parent = Category::where('parent_id',0)->where('status',1)->get();
+        $data=[];
+        foreach($parent as $pa){
+            $data[$pa->id]['name'] = $pa->name;
+            $data[$pa->id]['alias'] = $pa->alias;
+            $data[$pa->id]['status'] = $pa->status;
+            $data[$pa->id]['created_at'] = $pa->created_at;
+
+            $submenu = Category::where('parent_id',$pa->id)->get();
+            foreach($submenu as $sub){
+                $data[$pa->id]['sub'][$sub->id]['name'] = $sub->name;
+                $data[$pa->id]['sub'][$sub->id]['alias'] = $sub->alias;
+                $data[$pa->id]['sub'][$sub->id]['status'] = $sub->status;
+                $data[$pa->id]['sub'][$sub->id]['created_at'] = $sub->created_at;
+            }
+        }
+        return view('dashboard.category.index',compact('data'));
     }
 
     /**
@@ -26,7 +47,9 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('dashboard.category.add');
+        $parent = Category::where('parent_id',0)->get();
+        $url = \route('category.store');
+        return view('dashboard.category.add',compact('parent','url'));
     }
 
     /**
@@ -41,18 +64,33 @@ class CategoryController extends Controller
             'name' => 'required|unique:category'
         ],[
 
-            'name.reuqired' => 'Please input name',
-            'name.unnique' => 'Name already exists'
+            'name.required' => 'Please input name',
+            'name.unique' => 'Name already exists'
         ]);
-
         $category = new Category;
         $category->name = $request->name;
+        $category->parent_id = $request->parent_id;
         $category->alias = alias($category->name);
-        $category->status = 1;
+        $category->summary = $request->summary;
+        
+        $category->metakey = $request->metakey;
+        $category->metades = $request->summary;
+        $category->metarobot = $request->metarobot;
+        $category->status = $request->status;
+
+        $category->image = null;
+        if($request->hasFile('image'))
+        {
+            $file = $request->file('image');
+            $filename = bodauimage($file->getClientOriginalName());
+            $newname = strtotime(date('Y-m-d H:i:s')).'_'.$filename;
+            //$file->move('images/category',$newname);
+            $category->image = $newname;
+        }
 
         $category->save();
         session()->flash('message', 'Successfully added!');
-        return redirect('category');
+        return redirect()->route('category.index');
     }
 
     /**
@@ -75,7 +113,9 @@ class CategoryController extends Controller
     public function edit($id)
     {
         $category = Category::find($id);
-        return view('dashboard.category.edit',compact('category'));
+        $parent = Category::where('parent_id',0)->where('status',1)->get();
+        $url = \route('category.update',$id);
+        return view('dashboard.category.edit',compact('category','parent','url'));
     }
 
     /**
@@ -102,6 +142,6 @@ class CategoryController extends Controller
         $category->delete();
 
         session()->flash('message','Delete done');
-        return redirect('/category');
+        return redirect()->route('category.index');
     }
 }

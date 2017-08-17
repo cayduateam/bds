@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
   <!-- Theme style -->
   <link rel="stylesheet" href="admin/css/admin.css">
+
 </head>
 <body>
 <section class="main_container wrapper" id="page-wrapper">
@@ -35,8 +36,8 @@
 </section>
 
 @include('dashboard.assets.footer')
-<!-- jQuery 3 -->
-<script src="js/jquery.min.js"></script>
+  <!-- jQuery 3 -->
+  <script src="js/jquery.min.js"></script>
 <!-- Bootstrap 3.3.7 -->
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery.validate.min.js"></script>

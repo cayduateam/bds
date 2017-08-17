@@ -3,84 +3,164 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use App\Category;
 use App\News;
+use App\Category;
+use App\NewsDetail;
 
 class NewsController extends Controller
 {
-    public function getList(){
-        $news = News::orderBy('id','desc')->paginate(20);
-        return view('dashboard.news.list',['news' => $news]);
+    public function __construct(){
+        $task = null;
+        if(strpos(\route::currentRouteName(), 'create') !== false) $task = 'Create';
+        if(strpos(\route::currentRouteName(), 'edit') !== false) $task = 'Edit';
+        view()->share('task', $task);
     }
-    public function getaddNews(){
-        $category = Category::pluck('name');
-        return view('dashboard.news.add',['category' => $category]);
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        $data = array();
+        $news = News::paginate(20);
+        return view('dashboard.news.index',compact('news'));
     }
-    public function postaddNews(){
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        $url = \route('news.store');
+        $parent = Category::where('parent_id',0)->where('status',1)->get();
+        $category=[];
+        foreach($parent as $pa){
+            $category[$pa->id]['name'] = $pa->name;
+            $category[$pa->id]['alias'] = $pa->alias;
+            $category[$pa->id]['status'] = $pa->status;
+            $category[$pa->id]['created_at'] = $pa->created_at;
+
+            $submenu = Category::where('parent_id',$pa->id)->where('status',1)->get();
+            foreach($submenu as $sub){
+                $category[$pa->id]['sub'][$sub->id]['name'] = $sub->name;
+                $category[$pa->id]['sub'][$sub->id]['alias'] = $sub->alias;
+                $category[$pa->id]['sub'][$sub->id]['status'] = $sub->status;
+                $category[$pa->id]['sub'][$sub->id]['created_at'] = $sub->created_at;
+            }
+        }
+        return view('dashboard.news.add',compact('category','url'));
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
         $this->validate($request,[
-            'title' => 'required|min:5|unique:news,title' //title min 5 ky tu va co ten khong trung nhau
+            'title' => 'required|min:5'
         ],[
-            'title.required' => 'Vui lòng nhập tiêu đề',
-            'title.unique' => 'Tiêu đề đã tồn tại',
-            'title.min' => 'Tiêu đề quá ngắn'
+            'title.required' => 'Please input tile'
+            //more later
         ]);
 
         $news = new News;
         $news->title = $request->title;
-    }
+        // $news->parent_id = $request->parent_id;
+        $news->alias = alias($news->title);
+        $news->summary = $request->summary;
+        $news->content = $request->content;
+        $news->hit = 0;
+        
+        $news->metakey = $request->metakey;
+        $news->metades = $request->metades;
+        $news->metarobot = $request->metarobot;
+        $news->status = $request->status;
 
-
-    //section category
-    public function getListCat(){
-        $parent = Category::where('parent_id',0)->get();
-        $data=[];
-        foreach($parent as $pa){
-            $data[$pa->id]['id'] = $pa->id;
-            $data[$pa->id]['name'] = $pa->name;
-            $data[$pa->id]['alias'] = $pa->alias;
-            $data[$pa->id]['status'] = $pa->status;
-            $data[$pa->id]['created_at'] = $pa->created_at;
-
-            $submenu = Category::where('parent_id',$pa->id)->get();
-            foreach($submenu as $sub){
-                $data[$pa->id]['sub'][$sub->id]['name'] = $sub->name;
-                $data[$pa->id]['sub'][$sub->id]['alias'] = $sub->alias;
-                $data[$pa->id]['sub'][$sub->id]['status'] = $sub->status;
-                $data[$pa->id]['sub'][$sub->id]['created_at'] = $sub->created_at;
-            }
-        }
-        return view('dashboard.category.list',['data' => $data]);
-    }
-
-    public function getaddNewsCat(){
-        $parent = Category::select('id','name','alias')->where('parent_id',0)->get();
-        return view('dashboard.category.add',['parent' => $parent]);
-    }
-
-    public function postaddNewsCat(Request $request){
-        //validate hmm later
-        $category = new Category;
-        $category->name = $request->name;
-        $category->alias = bodau($request->name);
-
-        $category->metarobot = $request->metarobot;
-        $category->metakey = $request->metakey;
-        $category->metades = $request->summary;
-        $category->summary = $request->summary;
-        $category->status = $request->status;
-        $category->image = '';
+        $news->image = null;
         if($request->hasFile('image'))
         {
             $file = $request->file('image');
-            $filename = bodau($file->getClientOriginalName());
+            $filename = bodauimage($file->getClientOriginalName());
             $newname = strtotime(date('Y-m-d H:i:s')).'_'.$filename;
-            $file->move('images/category',$newname);
-            $category->image = $newname;
+            $file->move('images/news',$newname);
+            $news->image = $newname;
         }
-        $category->save();
-        return redirect('dashboard/index')->with('message','Thêm danh mục thành công');
+
+        $news->image_slide = null;
+        if($request->hasFile('image_slide'))
+        {
+            $file = $request->file('image_slide');
+            $filename = bodauimage($file->getClientOriginalName());
+            $newname = strtotime(date('Y-m-d H:i:s')).'_'.$filename;
+            $file->move('images/news/slide',$newname);
+            $news->image_slide = $newname;
+        }
+        $news->save();
+
+        $news_id = $news->id;
+        foreach($request->parent_id as $category_id){
+            $detail = new NewsDetail;
+            $detail->news_id = $news_id;
+            $detail->category_id = $category_id;
+            $detail->save();
+        }
+        session()->flash('message', 'Successfully added!');
+        return redirect()->route('news.index');
     }
 
-    //section category end
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        $news = News::find($id);
+        $news->delete();
+
+        session()->flash('message','Delete done');
+        return redirect()->route('news.index');
+    }
 }

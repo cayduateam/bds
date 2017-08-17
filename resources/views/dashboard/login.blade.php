@@ -36,7 +36,6 @@
 @if(session('message'))
 	{{session('message')}}
 @endif
-
 <div class="container">
   <div class="row">
   <div class="login-box col-md-4 col-md-offset-4 col-xs-12">
@@ -48,7 +47,7 @@
       <p class="login-box-msg">Sign in to start your MONEY</p>
 
       <form action="{{route('adminPostLogin')}}" method="post">
-        {{ csrf_field() }}
+      	{{ csrf_field() }}
         <div class="form-group has-feedback">
           <input type="username" class="form-control" placeholder="Username" name="username">
           <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
