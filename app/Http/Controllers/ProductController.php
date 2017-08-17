@@ -63,7 +63,7 @@ class ProductController extends Controller
             if(count($sub_sub_parent) > 0){
                 $res .= '<optgroup label="'.$cate->name.'">';
                 foreach($sub_sub_parent as $sub){
-                    $res .= '<option value="'.$cate->id.'">'.$cate->name.'</option>';
+                    $res .= '<option value="'.$sub->id.'">'.$sub->name.'</option>';
                 }
                 $res .= '</optgroup>';
             }
