@@ -808,13 +808,11 @@ i:hover {
 }
 .navbar {
   padding: 0px;
-  border-bottom: 1px solid #e4e4e4;
+  border-bottom: 1vmin solid #ff0000;
 }
 .nav-inline .nav-item + .nav-item {
   margin-left: 0px;
-
 }
-
 
 #main-menu ul > li > a {
   background: transparent!important;
