@@ -11,9 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index.index');
-});
+// Route::get('/', function () {
+//     return view('pages.index');
+// });
+Route::get('/','PageController@index');
+Route::get('index','PageController@index');
+
+Route::resource('about','PagesController@about');
 
 
 //Dashboard
@@ -35,5 +39,6 @@ Route::group(['prefix' => 'dashboard','middleware' => 'AdminLogin'],function(){
     Route::resource('product','ProductController');
     Route::post('product/parentchange',['as' => 'productPaChange','uses' => 'ProductController@parentChange']);
     
-    Route::resource('about','AboutController');
+    
+    Route::get('menu','ProductCategoryController@menu');
 });

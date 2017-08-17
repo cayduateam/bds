@@ -7,7 +7,19 @@ use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
+use App\ProductCategory;
+use App\Product;
+use App\Category;
+use App\ProductDetail;
+use App\ProductImage;
+use App\ProductImageDetail;
+
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+
+    // public function __construct(){
+    // 	$productCategory = ProductCategory::select('name','alias')->where('parent_id',0);
+    // 	view()->share('data','aaaaa');
+    // }
 }

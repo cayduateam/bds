@@ -7,4 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class ProductCategory extends Model
 {
     protected $table="product_category";
+
+    public function test(){
+    	echo 'here';
+    }
 }

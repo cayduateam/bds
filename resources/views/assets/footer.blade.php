@@ -20,7 +20,7 @@
 	<p class="line"></p>
 	<div class="footer2">
 		<div class="container">
-			<div class="text-center">
+			<div class="text-center animated bounceInDown wow">
 				<p>Copyright &copy; 2017 - <a href="http://laravel.cansolution.vn/">BĐS Nha Trang Online @team 2017</a> Thuy</p>
 			</div>
 		</div>

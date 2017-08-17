@@ -21,6 +21,7 @@
 </head>
 <body>
 <section class="main_container wrapper" id="page-wrapper">
+
   @include('dashboard.assets.header')
 <div class="container-fluid">
   <div class="row">

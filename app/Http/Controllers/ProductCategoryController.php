@@ -48,6 +48,7 @@ class ProductCategoryController extends Controller
         return view('dashboard.product-category.block.list',compact('data'))->render();
     }
     public function parentChange(Request $request){
+        
         $sub_parent = ProductCategory::select('id','name')->where('parent_id',$request->id)->where('status',1)->get();
         $res = '<option value="0">--</option>';
         foreach($sub_parent as $cate){

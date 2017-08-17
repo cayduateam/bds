@@ -31,31 +31,33 @@
 	<meta name="dc.identifier" content="http://hpsoft.vn/">
 	<meta name="dc.language" content="vi-VN">
 	<link rel="shortcut icon" href="favicon.ico" />
-
 	<base href="{{asset('')}}">
-	<!-- Bootstrap 3.3.7 -->
-    <link rel="stylesheet" href="css/reset.css">
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/animate.min.css">
 
-	<!-- Font Awesome -->
-	<link rel="stylesheet" href="css/font-awesome.min.css">
-	<link rel="stylesheet" href="css/bootstrap-datepicker.min.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <!-- Main Style -->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <!-- Responsive Style -->
+    <link rel="stylesheet" type="text/css" href="css/responsive.css">
+    <!--Fonts-->
+    <link rel="stylesheet" media="screen" href="fonts/font-awesome/font-awesome.min.css">
+    <link rel="stylesheet" media="screen" href="fonts/simple-line-icons.css">    
+     
+    <!-- Extras -->
+	<link rel="stylesheet" type="text/css" href="extras/owl/owl.carousel.min.css">
+    <link rel="stylesheet" type="text/css" href="extras/owl/owl.theme.default.min.css">
+    <link rel="stylesheet" type="text/css" href="extras/animate.css">
+    <link rel="stylesheet" type="text/css" href="extras/normalize.css">
+    <link rel="stylesheet" type="text/css" href="extras/settings.css">
 	@yield('style')
-	<!--[if lt IE 9]> <script src="js/html5shiv.js"></script>
-	<script src="js/respond.min.js"></script> <![endif]-->
-	<link rel="shortcut icon" href="images/ico/favicon.png">
-	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
-	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
-	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
-	<link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
-
-  	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  	<!--[if lt IE 9]>
-  	<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-  	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  	<![endif]-->
+    <!-- Color CSS Styles  -->
+    <link rel="stylesheet" type="text/css" href="css/colors/red.css" media="screen" />       
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js">
+    </script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js">
+    </script>
+    <![endif]-->
   	<!-- Google Font -->
   	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
   	<!-- Theme style -->
@@ -70,10 +72,11 @@
         js = d.createElement(s); js.id = id;
         js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.10&appId=582114615190679";
         fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
+    }(document, 'script', 'facebook-jssdk'));
+</script>
 @include('assets.header')
 
-<section class="main_container">
+<section class="main_container" style="min-height: 1000px">
 @yield('content')
 </section>
 
@@ -81,10 +84,30 @@
 @include('assets.footer')
 
 
-<!-- jQuery 3 -->
-<script src="js/jquery.js"></script>
-<!-- Bootstrap 3.3.7 -->
+<!-- JavaScript & jQuery Plugins -->
+<!-- jQuery Load -->
+<script src="js/jquery-min.js"></script>
+<!-- Bootstrap JS -->
 <script src="js/bootstrap.min.js"></script>
+<!--Text Rotator-->
+<script src="js/jquery.mixitup.js"></script>
+<!--WOW Scroll Spy-->
+<script src="js/wow.js"></script>
+<!-- OWL Carousel -->
+<script src="js/owl.carousel.min.js"></script>
+
+<!-- WayPoint -->
+<script src="js/waypoints.min.js"></script>
+<!-- CounterUp -->
+<script src="js/jquery.counterup.min.js"></script>
+<!-- ScrollTop -->
+<script src="js/scroll-top.js"></script>
+<!-- Appear -->
+<script src="js/jquery.appear.js"></script>
+<script src="js/jquery.vide.js"></script>
+ <!-- All JS plugin Triggers -->
+<script src="js/main.js"></script>
+<!-- <script src="assets/js/color-switcher.js"></script> -->
 <script src="js/js.js"></script>
 @yield('script')
 </body>

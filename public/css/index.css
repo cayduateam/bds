@@ -1,33 +1,42 @@
 /*slider */
-.owl-prev{
-    left: 10px!important;
-    position: absolute;
-    top: 50%;
+.carousel-inner>.carousel-item{
+    /*position: relative;*/
+    height: 40vmax;
 }
-.owl-next{
-    right: 10px;
+.carousel-inner>.carousel-item .link-slider{
     position: absolute;
-    top: 50%;
+    width: 100%;
+    text-align: center;
+    top:40%;
+    font-size: 30px;
+    color: #fff;
+    text-transform: uppercase
 }
-.article{
-    height:30vmax;
+.carousel-inner>.carousel-item .content-slider{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: 0;
+    font-size: 30px;
+    color: #fff;
+    text-transform: uppercase
+}
+.carousel-inner>.carousel-item>a>img, .carousel-inner>.carousel-item>img, .img-fluid{
+    width: 100%;
 }
 .content-slider{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    font-size: 120%;
-    width: 90%;
-    transform: translate(-50%, -50%);
-    text-align: center;
+    background: rgba(255, 255, 164, 0.5);
+    padding-top: 3vmin;
 }
 .content-slider h3{
-    color: #d3fff8;
-    display: inline-block;
-    font-family: roboto;
-    font-size: 3vmax;
-    text-shadow: none;
-    text-transform: uppercase;
+    color: red;
+    margin: 0;
+}
+.content-slider p{
+    margin:0;
+    padding: 4px 0;
+    color: #8f3302;
+    font-weight: bold;
 }
 .owl-carousel{border-bottom: 1vmin solid red;}
 /*end slider*/
