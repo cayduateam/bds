@@ -1,6 +1,8 @@
 
 .red{color:#ff0000}
 .text-center{text-align:center!important;}
+.text-left{text-align:left!important;}
+.text-right{text-align:right!important;}
 .line{
 	clear: both;
 	height: 1px;

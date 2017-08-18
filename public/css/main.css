@@ -812,7 +812,9 @@ i:hover {
 }
 .nav-inline .nav-item + .nav-item {
   margin-left: 0px;
+
 }
+
 
 #main-menu ul > li > a {
   background: transparent!important;
