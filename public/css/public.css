@@ -6,7 +6,7 @@
 .line{
 	clear: both;
 	height: 1px;
-	margin: 8px 0;
+	margin: 3px 0;
 	background: rgba(255,255,255,1);
 	background: -moz-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(222,0,0,1) 46%, rgba(255,255,255,1) 100%);
 	background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255,255,255,1)), color-stop(46%, rgba(219,219,219,1)), color-stop(100%, rgba(255,255,255,1)));
@@ -72,6 +72,12 @@
 	-webkit-background-size: 2px 2.1px;
 	background-position: 0 0, 1px 0, 1px -1px, 0px 1px;
 	padding: 25px 0;
+}
+.footer1 .logo a{
+	display: inline-block;
+}
+.footer1 .logo h4{
+	display: inline-block;
 }
 .footer2{
 	background-color: #f6f6f6;
