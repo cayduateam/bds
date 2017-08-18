@@ -61,7 +61,7 @@
     <div class="service container-fluid">
         <h2 class="title animated wobble text-center hidden-xs-down">DỊCH VỤ CỦA CHÚNG TÔI</h2>
         <div class="row">
-            <div class="col-md-6 col-xs-12 service-left">
+            <div class="col-md-6 col-xs-12 service-left wow bounceInLeft animated">
                 <ul>
                     <li>
                         <span class="text-right circle">
@@ -81,7 +81,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="col-md-6 col-xs-12 service-right">
+            <div class="col-md-6 col-xs-12 service-right wow animated bounceInRight">
                 <i class="fa fa-quote-left" aria-hidden="true"></i>
                 <div class="detail">
                     <p>Vui lòng liên hệ để được tư vẫn hỗ trợ nhanh chóng nhất</p>
