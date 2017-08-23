@@ -1,7 +1,7 @@
 /*slider */
 .carousel-inner>.carousel-item{
     /*position: relative;*/
-    height: 40vmax;
+    height: 35vmax;
 }
 .carousel-inner>.carousel-item .link-slider{
     position: absolute;

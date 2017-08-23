@@ -1,16 +1,16 @@
 @extends('assets.master')
 
 @section('style')
-    <link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="css/index.css">
 @endsection
 
 @section('script')
-    <script src="assets/js/owl.carousel.js"></script>
-    <script src="js/index.js"></script>
+	<script src="assets/js/owl.carousel.js"></script>
+	<script src="js/index.js"></script>
 @endsection
 
 @section('content')
-    {{--slider--}}
+	{{--slider--}}
     <div id="main_slider" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
@@ -54,14 +54,14 @@
         <span class="sr-only">Next</span>
       </a>
     </div>
-    {{--end slider--}}
+	{{--end slider--}}
 
-    {{--service--}}
+	{{--service--}}
     <p class="line"></p>
-    <div class="service container-fluid">
-        <h2 class="title animated wobble text-center hidden-xs-down">DỊCH VỤ CỦA CHÚNG TÔI</h2>
-        <div class="row">
-            <div class="col-md-6 col-xs-12 service-left wow bounceInLeft animated">
+	<div class="service container-fluid">
+		<h2 class="title wow animated wobble text-center hidden-xs-down">DỊCH VỤ CỦA CHÚNG TÔI</h2>
+		<div class="row">
+			<div class="col-md-6 col-xs-12 service-left wow bounceInLeft animated">
                 <ul>
                     <li>
                         <span class="text-right circle">
@@ -80,22 +80,22 @@
                         </span>
                     </li>
                 </ul>
-            </div>
-            <div class="col-md-6 col-xs-12 service-right wow animated bounceInRight">
+			</div>
+			<div class="col-md-6 col-xs-12 service-right wow animated bounceInRight">
                 <i class="fa fa-quote-left" aria-hidden="true"></i>
                 <div class="detail">
                     <p>Vui lòng liên hệ để được tư vẫn hỗ trợ nhanh chóng nhất</p>
                     <P>Ms Thủy: 0935 044 567</P>
                 </div>
                 <i class="fa fa-quote-right" aria-hidden="true"></i>
-            </div>
-        </div>
-    </div>
-    <p class="line"></p>
-    {{--end service --}}
+			</div>
+		</div>
+	</div>
+	<p class="line"></p>
+	{{--end service --}}
 
-    {{--search with parallax --}}
-    <!-- <div class="searchbds parallax" data-speed="0.5" style="background: url('images/search-background.jpg') 50% -79.5px no-repeat;">
+	{{--search with parallax --}}
+	<!-- <div class="searchbds parallax" data-speed="0.5" style="background: url('images/search-background.jpg') 50% -79.5px no-repeat;">
 
         <div class="container searchbds-container">
             <div class="row">
@@ -165,8 +165,8 @@
                 </div>
             </div>
         </div>
-    </div> -->
-    {{--end search with parallax --}}
+	</div> -->
+	{{--end search with parallax --}}
 
     {{--lastest news--}}
 

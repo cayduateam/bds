@@ -24,11 +24,11 @@
 	<meta name="dc.keywords" content="bat dong san, bds nha trang, nha trang">
 	<meta name="dc.subject" content="Thiet ke web Hai Phong">
 	<meta name="dc.created" content="2013-03-03">
-	<meta name="dc.publisher" content="Cong ty phan mem Hai Phong HPSOFT">
-	<meta name="dc.rights.copyright" content="HPSOFT">
-	<meta name="dc.creator.name" content="HPSOFT JSC">
-	<meta name="dc.creator.email" content="sales@hpsoft.vn">
-	<meta name="dc.identifier" content="http://hpsoft.vn/">
+	<meta name="dc.publisher" content="Cong ty ...">
+	<meta name="dc.rights.copyright" content="Wido">
+	<meta name="dc.creator.name" content="Lynguyen">
+	<meta name="dc.creator.email" content="sales@abcccc.vn">
+	<meta name="dc.identifier" content="http:///">
 	<meta name="dc.language" content="vi-VN">
 	
 	<link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
@@ -59,7 +59,7 @@
     <link rel="stylesheet" type="text/css" href="css/responsive.css">
     <!--Fonts-->
     <link rel="stylesheet" media="screen" href="fonts/font-awesome/font-awesome.min.css">
-    <link rel="stylesheet" media="screen" href="fonts/simple-line-icons.css">    
+    <link rel="stylesheet" media="screen" href="fonts/simple-line-icons.css">
      
     <!-- Extras -->
 	<link rel="stylesheet" type="text/css" href="extras/owl/owl.carousel.min.css">
@@ -105,7 +105,7 @@
 
 <!-- JavaScript & jQuery Plugins -->
 <!-- jQuery Load -->
-<script src="js/jquery-min.js"></script>
+<script src="js/jquery.min.js"></script>
 <!-- Bootstrap JS -->
 <script src="js/bootstrap.min.js"></script>
 <!--Text Rotator-->
