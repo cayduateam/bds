@@ -1,12 +1,7 @@
 <!-- Header area wrapper starts -->
 <header id="header-wrap">
-  <!-- Roof area starts -->
-  
-  <!-- Roof area Ends -->
-
   <!-- Header area starts -->
   <section id="header">
-
     <!-- Navbar Starts -->
     <nav class="navbar navbar-light" data-spy="affix" data-offset-top="50">
       <div class="container-fluid">
@@ -33,11 +28,14 @@
                 </li>
                 @foreach($proCat as $cat)
                   <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{$cat['name']}}</a>
-                    <div class="dropdown-menu">
-                      <a class="dropdown-item" href="accordions.html">Accordions</a>
-                      <a class="dropdown-item" href="tabs.html">Tabs</a>
-                    </div>
+                    <a class="nav-link dropdown-toggle" href="{{route('category.view',$cat['alias'])}}" role="button" aria-haspopup="true" aria-expanded="false">{{$cat['name']}}</a>
+                    @if(isset($cat['sub']))
+                      @foreach($cat['sub'] as $sub)
+                        <div class="dropdown-menu">
+                        <a class="dropdown-item" href="{{route('category.view',$sub['alias'])}}">{{$sub['name']}}</a>
+                        </div>  
+                      @endforeach
+                    @endif
                   </li>
                 @endforeach
                 <li class="nav-item dropdown">

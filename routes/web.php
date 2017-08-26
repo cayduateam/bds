@@ -18,7 +18,9 @@ Route::get('/','PageController@index');
 Route::get('index','PageController@index');
 
 Route::resource('about','PagesController@about');
-
+Route::group(['prefix' => 'category'],function(){
+    Route::get('{category_id?}',['as' => 'category.view','uses' => 'ProductCategoryController@viewCategory']);
+});
 
 //Dashboard
 Route::get('dashboard/login','DashboardController@login');

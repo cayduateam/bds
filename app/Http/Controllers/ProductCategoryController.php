@@ -130,6 +130,10 @@ class ProductCategoryController extends Controller
         //
     }
 
+    public function viewCategory($category_id){
+        echo 'here -> ',$category_id;
+    }
+
     /**
      * Show the form for editing the specified resource.
      *

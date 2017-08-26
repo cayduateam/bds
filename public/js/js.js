@@ -15,8 +15,6 @@
 
             var $obj = $(this);
 
-            console.log(this);
-
             $(window).scroll(function () {
 
                 var varTopScroll = $(window).scrollTop();

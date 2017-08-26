@@ -110,12 +110,13 @@
 <script src="js/bootstrap.min.js"></script>
 <!--Text Rotator-->
 <script src="js/jquery.mixitup.js"></script>
+
+<!-- OWL Carousel -->
+<!-- <script src="js/owl.carousel.min.js"></script> -->
+@yield('script')
+<!-- WayPoint -->
 <!--WOW Scroll Spy-->
 <script src="js/wow.js"></script>
-<!-- OWL Carousel -->
-<script src="js/owl.carousel.min.js"></script>
-
-<!-- WayPoint -->
 <script src="js/waypoints.min.js"></script>
 <!-- CounterUp -->
 <script src="js/jquery.counterup.min.js"></script>
@@ -128,6 +129,6 @@
 <script src="js/main.js"></script>
 <!-- <script src="assets/js/color-switcher.js"></script> -->
 <script src="js/js.js"></script>
-@yield('script')
+
 </body>
 </html>
