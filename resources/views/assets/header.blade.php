@@ -21,32 +21,28 @@
               <!-- Navbar Starts -->
               <ul class="nav nav-inline">
                 <li class="nav-item dropdown">
-                  <a class="nav-link active" href="index.html" role="button" aria-haspopup="true" aria-expanded="false">Home</a>
+                  <a class="nav-link active" href="#" role="button" aria-haspopup="true" aria-expanded="false">Home</a>
                 </li>
                 <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Giới thiệu</a>
+                  <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="about" role="button" aria-haspopup="true" aria-expanded="false">Giới thiệu</a>
                 </li>
                 @foreach($proCat as $cat)
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="{{route('category.view',$cat['alias'])}}" role="button" aria-haspopup="true" aria-expanded="false">{{$cat['name']}}</a>
                     @if(isset($cat['sub']))
+                      <div class="dropdown-menu">
                       @foreach($cat['sub'] as $sub)
-                        <div class="dropdown-menu">
                         <a class="dropdown-item" href="{{route('category.view',$sub['alias'])}}">{{$sub['name']}}</a>
-                        </div>  
                       @endforeach
+                      </div>
                     @endif
                   </li>
                 @endforeach
                 <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                    Contact Us
+                  <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="contact" role="button" aria-haspopup="true" aria-expanded="false">
+                    Liên hệ
                   </a>
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item" href="contact1.html">Contact us 1</a>
-                    <a class="dropdown-item" href="contact2.html">Contact us 2</a>
-                  </div> 
-                </li>          
+                </li>
                 <!-- Search in right of nav -->
                 <li class="nav-item" class="search">
                   <form class="top_search clearfix">
@@ -58,8 +54,8 @@
                   </form>
                 </li>
                 <!-- Search Ends -->
-              </ul>  
-            </div>              
+              </ul>
+            </div>
               <!-- Form for navbar search area -->
               <form class="full-search">
                 <div class="container">
@@ -72,11 +68,8 @@
               </form>
           </div>
         </div>
-        
-        
       </div>
     </nav>
     <!-- Navbar Ends -->
-
   </section>
 </header>

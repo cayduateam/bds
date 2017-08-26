@@ -23,6 +23,16 @@ class ProductCategoryController extends Controller
      */
     public function index()
     {
+        
+        /*view database query
+        \DB::connection()->enableQueryLog();
+        $data = Product::find(6)->images;
+        $queries = \DB::getQueryLog();
+        return dd($queries);
+        //end view database query */
+
+
+
         $parent = ProductCategory::where('parent_id',0)->where('status',1)->get();
         return view('dashboard.product-category.index',compact('parent'));
     }
@@ -130,10 +140,6 @@ class ProductCategoryController extends Controller
         //
     }
 
-    public function viewCategory($category_id){
-        echo 'here -> ',$category_id;
-    }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -171,4 +177,5 @@ class ProductCategoryController extends Controller
         session()->flash('message','Delete done');
         return redirect()->route('product-category.index');
     }
+
 }

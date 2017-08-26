@@ -13,7 +13,7 @@ class NewsDetail extends Migration
      */
     public function up()
     {
-        Schema::create('news-detail', function (Blueprint $table) {
+        Schema::create('news_detail', function (Blueprint $table) {
             $table->integer('news_id');
             $table->integer('category_id');
             $table->unique(['news_id', 'category_id']);
@@ -27,6 +27,6 @@ class NewsDetail extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('news-detail');
+        Schema::dropIfExists('news_detail');
     }
 }

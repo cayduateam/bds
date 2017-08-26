@@ -107,6 +107,7 @@
 <!-- jQuery Load -->
 <script src="js/jquery.min.js"></script>
 <!-- Bootstrap JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script> 
 <script src="js/bootstrap.min.js"></script>
 <!--Text Rotator-->
 <script src="js/jquery.mixitup.js"></script>
@@ -122,9 +123,10 @@
 <script src="js/jquery.counterup.min.js"></script>
 <!-- ScrollTop -->
 <script src="js/scroll-top.js"></script>
-<!-- Appear -->
+<!-- Appear --><!-- 
 <script src="js/jquery.appear.js"></script>
-<script src="js/jquery.vide.js"></script>
+<script src="js/jquery.vide.js"></script> -->
+<script src="js/responsive-tabs.js"></script>
  <!-- All JS plugin Triggers -->
 <script src="js/main.js"></script>
 <!-- <script src="assets/js/color-switcher.js"></script> -->

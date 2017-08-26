@@ -13,7 +13,7 @@ class CreateProductDetailsTable extends Migration
      */
     public function up()
     {
-        Schema::create('product-details', function (Blueprint $table) {
+        Schema::create('product_details', function (Blueprint $table) {
             $table->integer('product_id');
             $table->integer('product_category_id');
             $table->unique(['product_id', 'product_category_id']);
@@ -27,6 +27,6 @@ class CreateProductDetailsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('product-details');
+        Schema::dropIfExists('product_details');
     }
 }

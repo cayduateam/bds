@@ -131,10 +131,13 @@ class ProductController extends Controller
         }
         if(isset($image_id) && count($image_id) > 0){
             foreach($image_id as $id){
-                $image_detail = new ProductImageDetail;
-                $image_detail->product_id = $product_id;
-                $image_detail->product_image_id = $id;
-                $image_detail->save();
+                $image = ProductImage::findOrFail($id);
+                $image->product_id = $product_id;
+                $image->save();
+                // $image_detail = new ProductImageDetail;
+                // $image_detail->product_id = $product_id;
+                // $image_detail->product_image_id = $id;
+                // $image_detail->save();
             }
         }
 

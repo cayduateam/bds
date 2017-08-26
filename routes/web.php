@@ -17,9 +17,11 @@
 Route::get('/','PageController@index');
 Route::get('index','PageController@index');
 
-Route::resource('about','PagesController@about');
+Route::get('about','PageController@about');
+
+//Category
 Route::group(['prefix' => 'category'],function(){
-    Route::get('{category_id?}',['as' => 'category.view','uses' => 'ProductCategoryController@viewCategory']);
+    Route::get('view/{category_alias}',['as' => 'category.view','uses' => 'PageController@viewCategory']);
 });
 
 //Dashboard

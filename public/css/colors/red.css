@@ -1,8 +1,8 @@
 a{
-  color: #ff5959;
+  color: #000033!important;
 }
 a:hover{
-  color: #cc4b4b;
+  color: #f00;
 }
 .navbar-engage .dropdown .dropdown-menu > li.active > a{
   color: #ff5959;

@@ -9,6 +9,6 @@ use App\ProductDetail;
 
 class ProductDetail extends Model
 {
-    protected $table="product-details";
+    protected $table="product_details";
     public $timestamps = false;
 }

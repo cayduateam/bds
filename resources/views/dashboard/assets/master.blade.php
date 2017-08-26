@@ -37,6 +37,7 @@
 
 @include('dashboard.assets.footer')
 <script src="js/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script> 
 <script src="js/bootstrap.min.js"></script>
 <script src="js/bootstrap-switch.min.js"></script>
 <script src="js/jquery.validate.min.js"></script>

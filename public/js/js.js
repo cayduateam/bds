@@ -45,6 +45,10 @@
 }(jQuery));
 jQuery( document ).ready(function() {
     jQuery(".parallax").parallax();
+    
+    //list tab
+    $('#listTabs').responsiveTabs();
+    //end list tab
 
 });
 //end parallax

@@ -11,6 +11,7 @@ use App\Category;
 use App\ProductDetail;
 use App\ProductImage;
 use App\ProductImageDetail;
+use App\News;
 
 class PageController extends Controller
 {
@@ -26,8 +27,12 @@ class PageController extends Controller
             }
         }
         $category = Category::select('name','alias')->where('parent_id',0)->where('status',1)->get();
+
+        $lastest_news = News::select('title','alias','hit')->where('status',1)->orderBy('hit','desc')->orderBy('created_at','desc')->get();
+
         view()->share('proCat',$proCat);
         view()->share('category',$category);
+        view()->share('lastest_news',$lastest_news);
     }
     /**
      * Display a listing of the resource.
@@ -37,6 +42,23 @@ class PageController extends Controller
     public function index()
     {
         return view('pages.index');
+    }
+
+    /*
+     * Frontend view
+     */
+    public function viewCategory($category_alias){
+
+        $sub = ProductCategory::select('id','name','alias','hit')
+        ->whereIn('parent_id',function($query) use ($category_alias){
+            $query->select('id')->from('product_category')->where('alias',$category_alias);
+        })->get();
+        return view('pages.category',compact('sub'));
+    }
+
+    public function about(){
+
+        echo 'about';
     }
 
     /**
