@@ -18,6 +18,7 @@ class CreateAboutsTable extends Migration
             $table->string('title');
             $table->string('alias');
             $table->text('content')->nullable();
+            $table->text('image')->nullable();
             $table->string('section1_title')->nullable();
             $table->text('section1')->nullable();
             $table->string('section2_title')->nullable();

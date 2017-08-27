@@ -9,52 +9,78 @@
     </div>
     <p class="line"></p>
     @include('dashboard.assets.error')
-	<form method="post" class="canthiet" action="{{route('about.store')}}"  enctype="multipart/form-data">
+    @include('dashboard.assets.message')
+	<form method="post" class="canthiet" action="{{route('about.update',$about->id)}}"  enctype="multipart/form-data">
         {{csrf_field()}}
-        @section('edit_method')
-        @show
+        {{method_field('put')}}
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-9">
             	<div class="form-group row">
-				    <label class="col-sm-2 col-form-label">Password</label>
+				    <label class="col-sm-2 col-form-label">Section 1</label>
 				    <div class="col-sm-10">
-				      	<input name="name" type="text" class="form-control required" value="@yield('category.name')">
+				      	<input name="section1_title" type="text" class="form-control required" value="{{$about->section1_title}}">
 			    	</div>
 		    	</div>
 		    	<div class="form-group">
 					<label>Mô tả</label>
-	            	<textarea class="form-control summernote required"  name="summary"></textarea>
+	            	<textarea class="form-control summernote required"  name="section1">{{$about->section1}}</textarea>
             	</div>
-            </div>
-            <div class="form-group col-md-4">
-                <label>Meta Robot</label>
-                <select class="form-control" name="metarobot">
-                    {!!showmetaRobotOption()!!}
-                </select>
-
-                <label>Meta keyword</label>
-                <input name="metakey" type="text" class="form-control"  value="@yield('category.metakey')">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <label>Ảnh đại diện</label>
-                            <input type="file" class="form-control-file" name="image">
-                        </div>
-                    </div>
-                    <hr/>
-                    <div class="col-md-12">
-                        <label>Trạng thái</label>
-                        <select class="form-control" name="status">
-                            <option value="1">Enable</option>
-                            <option value="0">Disable</option>
-                        </select>
+                <hr/>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Section 2</label>
+                    <div class="col-sm-10">
+                        <input name="section2_title" type="text" class="form-control " value="{{$about->section2_title}}">
                     </div>
                 </div>
+                <div class="form-group">
+                    <label>Mô tả</label>
+                    <textarea class="form-control summernote "  name="section2">{{$about->section2}}</textarea>
+                </div>
+                <hr/>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Section 3</label>
+                    <div class="col-sm-10">
+                        <input name="section3_title" type="text" class="form-control " value="{{$about->section3_title}}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Mô tả</label>
+                    <textarea class="form-control summernote "  name="section3">{{$about->section3}}</textarea>
+                </div>
+                <hr/>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Section 4</label>
+                    <div class="col-sm-10">
+                        <input name="section4_title" type="text" class="form-control " value="{{$about->section4_title}}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Mô tả</label>
+                    <textarea class="form-control summernote "  name="section4">{{$about->section4}}</textarea>
+                </div>
+                <hr/>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Section 5</label>
+                    <div class="col-sm-10">
+                        <input name="section5_title" type="text" class="form-control " value="{{$about->section5_title}}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Mô tả</label>
+                    <textarea class="form-control summernote"  name="section5">{{$about->section5}}</textarea>
+                </div>
             </div>
-            <div class="form-group col-md-8">
-                
+            <div class="form-group col-md-3">
+                <div class="form-group">
+                    <label>Ảnh đại diện</label>
+                    <input type="file" class="form-control-file" name="image">
+                    <input type="hidden" name="old_image" value="{{$about->image}}">
+                </div>
+                <hr/>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
             </div>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 @endsection

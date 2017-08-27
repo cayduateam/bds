@@ -14,7 +14,8 @@ class FooterController extends Controller
      */
     public function index()
     {
-        //
+        $footer = Footer::first();
+        return view('dashboard.footer.index',compact('footer'));
     }
 
     /**
@@ -69,7 +70,24 @@ class FooterController extends Controller
      */
     public function update(Request $request, Footer $footer)
     {
-        //
+        $this->validate($request,[
+            'section1_title' => 'required|min:5'
+        ],[
+            'section1_title.required' => 'Please input at least 1 section'
+            //more later
+        ]);
+
+        $footer = Footer::find(1);
+        $footer->section1_title = $request->section1_title;
+        $footer->section1 = $request->section1;
+        $footer->section2_title = $request->section2_title;
+        $footer->section2 = $request->section2;
+        $footer->section3_title = $request->section3_title;
+        $footer->section3 = $request->section3;
+        
+        $footer->save();
+        session()->flash('message', 'Successfully edit Footer!');
+        return redirect()->route('footer.index');
     }
 
     /**

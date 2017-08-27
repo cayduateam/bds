@@ -66,7 +66,7 @@ class NewsController extends Controller
         $this->validate($request,[
             'title' => 'required|min:5'
         ],[
-            'title.required' => 'Please input tile'
+            'title.required' => 'Please input title'
             //more later
         ]);
 

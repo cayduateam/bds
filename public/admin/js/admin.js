@@ -5,11 +5,22 @@ function del(){
 
 $(document).ready(function(){
     $('.canthiet').validate();
-    $('.summernote').summernote();
+    $('.summernote').summernote({
+    	popover: {
+         image: [],
+         link: [],
+         air: []
+       }
+    });
 
     $('.summernote_large').summernote({
         height: 300,
-        focus: true
+        focus: true,
+        popover: {
+         image: [],
+         link: [],
+         air: []
+       }
     });
 
     $(".checkonoff").bootstrapSwitch();
