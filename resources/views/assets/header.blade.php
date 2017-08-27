@@ -24,7 +24,7 @@
                   <a class="nav-link active" href="#" role="button" aria-haspopup="true" aria-expanded="false">Home</a>
                 </li>
                 <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="about" role="button" aria-haspopup="true" aria-expanded="false">Giới thiệu</a>
+                  <a class="nav-link dropdown-toggle" href="about" role="button" aria-haspopup="true" aria-expanded="false">Giới thiệu</a>
                 </li>
                 @foreach($proCat as $cat)
                   <li class="nav-item dropdown">

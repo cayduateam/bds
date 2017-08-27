@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAboutsTable extends Migration
+class FooterTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,22 +13,15 @@ class CreateAboutsTable extends Migration
      */
     public function up()
     {
-        Schema::create('abouts', function (Blueprint $table) {
+        Schema::create('footer', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title');
-            $table->string('alias');
-            $table->text('content')->nullable();
             $table->string('section1_title')->nullable();
             $table->text('section1')->nullable();
             $table->string('section2_title')->nullable();
             $table->text('section2')->nullable();
             $table->string('section3_title')->nullable();
             $table->text('section3')->nullable();
-            $table->string('section4_title')->nullable();
-            $table->text('section4')->nullable();
-            $table->string('section5_title')->nullable();
-            $table->text('section5')->nullable();
-            $table->timestamps();
+            // $table->timestamps();
         });
     }
 
@@ -39,6 +32,6 @@ class CreateAboutsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('abouts');
+        Schema::dropIfExists('footer');
     }
 }

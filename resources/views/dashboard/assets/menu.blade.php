@@ -33,8 +33,8 @@
 <div class="row">
     <h4>THÔNG TIN CHUNG</h4>
     <ul class="nav navbar-nav side-nav menu-nav">
-        <li><a href="#">About us</a></li>
-        <li><a href="#">Footer</a></li>
+        <li><a href="{{route('about.index')}}">About us</a></li>
+        <li><a href="{{route('footer.index')}}">Footer</a></li>
         <!--
         <li>
             <a href="javascript:;" data-toggle="collapse" data-target="#demo" class="" aria-expanded="true">Sản phẩm <i class="fa fa-fw fa-caret-down"></i></a>

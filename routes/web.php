@@ -45,4 +45,7 @@ Route::group(['prefix' => 'dashboard','middleware' => 'AdminLogin'],function(){
     
     
     Route::get('menu','ProductCategoryController@menu');
+
+    Route::resource('about','AboutController');
+    Route::resource('footer','FooterController');
 });

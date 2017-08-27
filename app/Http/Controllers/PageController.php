@@ -12,6 +12,8 @@ use App\ProductDetail;
 use App\ProductImage;
 use App\ProductImageDetail;
 use App\News;
+use App\About;
+use App\Footer;
 
 class PageController extends Controller
 {
