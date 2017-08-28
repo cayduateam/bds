@@ -15,7 +15,7 @@ return [
     'middlewares' => ['web', 'auth'],
 
     // The url to this package. Change it if necessary.
-    'prefix' => 'laravel-filemanager',
+    'prefix' => 'laravel-filemanager-bds',
 
     /*
     |--------------------------------------------------------------------------
@@ -43,9 +43,9 @@ return [
 
     // Which folder to store files in project, fill in 'public', 'resources', 'storage' and so on.
     // You should create routes to serve images if it is not set to public.
-    'base_directory' => 'public',
+    'base_directory' => 'public/filemanager',
 
-    'images_folder_name' => 'photos',
+    'images_folder_name' => 'images',
     'files_folder_name'  => 'files',
 
     'shared_folder_name' => 'shares',
@@ -72,7 +72,7 @@ return [
     'rename_file' => false,
 
     // If rename_file set to false and this set to true, then non-alphanumeric characters in filename will be replaced.
-    'alphanumeric_filename' => false,
+    'alphanumeric_filename' => true,
 
     // If true, non-alphanumeric folder name will be rejected.
     'alphanumeric_directory' => false,

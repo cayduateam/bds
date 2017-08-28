@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\About;
-use App\Category;
-use App\NewsDetail;
 
 class AboutController extends Controller
 {
@@ -38,7 +36,7 @@ class AboutController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,[
+         $this->validate($request,[
             'section1_title' => 'required|min:5'
         ],[
             'section1_title.required' => 'Please input at least 1 section'

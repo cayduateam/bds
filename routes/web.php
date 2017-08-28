@@ -24,6 +24,12 @@ Route::group(['prefix' => 'category'],function(){
     Route::get('view/{category_alias}',['as' => 'category.view','uses' => 'PageController@viewCategory']);
 });
 
+// Route::get('/image', function()
+// {
+//     $img = Image::make('https://i.ytimg.com/vi/cGFP4h1dD90/maxresdefault.jpg')->resize(300, 200);
+//     return $img->response('jpg');
+// });
+
 //Dashboard
 Route::get('dashboard/login','DashboardController@login');
 Route::post('dashboard/postLogin','DashboardController@postLogin')->name('adminPostLogin');
