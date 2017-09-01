@@ -223,6 +223,15 @@ a:focus {
   list-style:none;
   padding:10px 0;
 }
+.panel-default > .panel-heading{
+  color: #333;
+  background-color: #f5f5f5;
+  border-color: #ddd;
+}
+.note-btn{
+  background: #fff;
+  border-color: #ddd;
+}
 /*end menu*/
 .headnews{
     text-align: center;

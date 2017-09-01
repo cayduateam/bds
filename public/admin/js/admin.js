@@ -32,6 +32,7 @@ $(document).ready(function(){
 
     $('.canthiet').validate();
     $('.summernote').summernote({
+        height: 200,
     	popover: {
             image: [],
             link: [],
@@ -40,7 +41,7 @@ $(document).ready(function(){
         toolbar: [
             ['style', ['bold', 'italic', 'underline', 'undo']],
             ['fontsize', ['fontsize','hr']],
-            ['color', ['color']],
+            ['color', ['color','video','table']],
             ['para', ['ul', 'ol', 'paragraph']],
             ['popovers', ['lfm','fullscreen','codeview']],
         ],
@@ -50,7 +51,7 @@ $(document).ready(function(){
     });
 
     $('.summernote_large').summernote({
-        height: 300,
+        height: 500,
         focus: true,
         popover: {
             image: [],
@@ -60,7 +61,7 @@ $(document).ready(function(){
         toolbar: [
             ['style', ['bold', 'italic', 'underline', 'undo']],
             ['fontsize', ['fontsize','hr']],
-            ['color', ['color']],
+            ['color', ['color','video','table']],
             ['para', ['ul', 'ol', 'paragraph']],
             ['popovers', ['lfm','fullscreen','codeview']],
         ],
