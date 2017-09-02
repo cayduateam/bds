@@ -91,12 +91,14 @@
                         </select>
                     </div>
                     @endif
-                    <hr/><br/>
                     <div class="form-group col-md-12">
                         <label>Ảnh thumbnail </label>
                         <input type="file" class="form-control-file" name="thumb"><br/>
                     </div>
-                    <hr/><br/>
+                    <div class="form-group col-md-12">
+                        <label>Ảnh slide</label>
+                        <input type="file" class="form-control-file" name="slide"><br/>
+                    </div>
                     <div class="col-md-12">
                         <div class="form-group">
                             <label>Ảnh </label>

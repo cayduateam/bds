@@ -103,22 +103,24 @@ class ProductController extends Controller
         $product->metades = $request->summary;
         $product->metarobot = $request->metarobot;
         $product->status = $request->status;
-
         $product->thumb = null;
         if($request->hasFile('thumb'))
         {
-            $file = $request->file('thumb');
-            $folder = rand(1,10);
-            $filename = bodauimage($file->getClientOriginalName());
-            $newname = strtotime(date('Y-m-d H:i:s', strtotime("+2 second"))).'_'.$filename;
-            $file->move('images/product/'.$folder.'/',$newname);
+            $thumb = $request->file('thumb');
+            $filename = bodauimage($thumb->getClientOriginalName());
+            $newname = $product->alias.'-'.$filename;
+            $thumb->move('images/product/thumb/',$newname);
+            $product->thumb = 'thumb/'.$newname;
+        }
 
-            $thumb = new ProductImage;
-            $thumb->link = $folder.'/'.$newname;
-            $thumb->save();
-            $image_id[] = $thumb->id;
-
-            $product->thumb = $thumb->link;
+        $product->slide = null;
+        if($request->hasFile('slide'))
+        {
+            $slide = $request->file('slide');
+            $filename = bodauimage($slide->getClientOriginalName());
+            $newname = $product->alias.'-'.$filename;
+            $slide->move('images/product/slide/',$newname);
+            $product->slide = 'slide/'.$newname;
         }
 
         if($request->hasFile('image'))
@@ -152,14 +154,10 @@ class ProductController extends Controller
                 $image = ProductImage::findOrFail($id);
                 $image->product_id = $product_id;
                 $image->save();
-                // $image_detail = new ProductImageDetail;
-                // $image_detail->product_id = $product_id;
-                // $image_detail->product_image_id = $id;
-                // $image_detail->save();
             }
         }
 
-        session()->flash('message', 'Successfully added!');
+        session()->flash('message', 'Successfully added product');
         return redirect()->route('product.index');
     }
 
