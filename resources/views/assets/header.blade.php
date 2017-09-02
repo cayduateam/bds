@@ -26,6 +26,7 @@
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="about" role="button" aria-haspopup="true" aria-expanded="false">Giới thiệu</a>
                 </li>
+                @if(count($proCat) > 0)
                 @foreach($proCat as $cat)
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="{{route('category.view',$cat['alias'])}}" role="button" aria-haspopup="true" aria-expanded="false">{{$cat['name']}}</a>
@@ -38,6 +39,7 @@
                     @endif
                   </li>
                 @endforeach
+                @endif
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="contact" role="button" aria-haspopup="true" aria-expanded="false">
                     Liên hệ

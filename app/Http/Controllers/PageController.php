@@ -19,6 +19,7 @@ class PageController extends Controller
 {
     public function __construct(){
         $parentProCat = ProductCategory::select('id','name','alias')->where('parent_id',0)->where('status',1)->get();
+        $proCat = array();
         foreach($parentProCat as $parent){
             $proCat[$parent->id]['alias'] = $parent->alias;
             $proCat[$parent->id]['name'] = $parent->name;
