@@ -40,12 +40,6 @@
                     <textarea class="form-control summernote required" name="summary"></textarea>
                 </div>
                 <hr/>
-                <!-- <div class="form-group row">
-                    <label class="col-sm-2 col-form-label">Section 2</label>
-                    <div class="col-sm-10">
-                        <input name="section2_title" type="text" class="form-control " value="">
-                    </div>
-                </div> -->
                 <div class="form-group col-md-12">
                     <label class="col-sm-2 col-form-label">Nội dung 1</label>
                     <div class="col-sm-10">

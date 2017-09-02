@@ -93,13 +93,34 @@ class ProductController extends Controller
         $product->price = $request->price;
         $product->sale = $request->sale;
         $product->summary = $request->summary;
-        $product->content = $request->content;
+        $product->content1_title = $request->content1_title;
+        $product->content2 = $request->content2;
+        $product->content2_title = $request->content2_title;
+        $product->content1 = $request->content3;
+        $product->content3_title = $request->content3_title;
+        $product->content1 = $request->content1;
         $product->metakey = $request->metakey;
         $product->metades = $request->summary;
         $product->metarobot = $request->metarobot;
         $product->status = $request->status;
 
-        // $product->image = null;
+        $product->thumb = null;
+        if($request->hasFile('thumb'))
+        {
+            $file = $request->file('thumb');
+            $folder = rand(1,10);
+            $filename = bodauimage($file->getClientOriginalName());
+            $newname = strtotime(date('Y-m-d H:i:s', strtotime("+2 second"))).'_'.$filename;
+            $file->move('images/product/'.$folder.'/',$newname);
+
+            $thumb = new ProductImage;
+            $thumb->link = $folder.'/'.$newname;
+            $thumb->save();
+            $image_id[] = $thumb->id;
+
+            $product->thumb = $thumb->link;
+        }
+
         if($request->hasFile('image'))
         {
             $files = $request->file('image');
@@ -114,10 +135,7 @@ class ProductController extends Controller
                 $image->link = $folder.'/'.$newname;
                 $image->save();
                 $image_id[] = $image->id;
-
-                $product->image = $image->link;
             }
-            
         }
 
         $product->save();
