@@ -32,7 +32,7 @@ $(document).ready(function(){
 
     $('.canthiet').validate();
     $('.summernote').summernote({
-        height: 200,
+        height: 150,
     	popover: {
             image: [],
             link: [],
@@ -51,7 +51,7 @@ $(document).ready(function(){
     });
 
     $('.summernote_large').summernote({
-        height: 500,
+        height: 300,
         focus: true,
         popover: {
             image: [],

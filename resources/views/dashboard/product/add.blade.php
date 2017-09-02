@@ -39,10 +39,36 @@
                     <label>Mô tả</label>
                     <textarea class="form-control summernote required" name="summary"></textarea>
                 </div>
-
+                <hr/>
+                <!-- <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Section 2</label>
+                    <div class="col-sm-10">
+                        <input name="section2_title" type="text" class="form-control " value="">
+                    </div>
+                </div> -->
                 <div class="form-group col-md-12">
-                    <label>Nội dung</label>
-                    <textarea class="form-control summernote_large required" name="content" value="@yield('product.content')"></textarea>
+                    <label class="col-sm-2 col-form-label">Nội dung 1</label>
+                    <div class="col-sm-10">
+                        <input name="content1_title" type="text" class="form-control required" value="@yield('product.content1_title')">
+                    </div>
+                    <br/><br/>
+                    <textarea class="form-control summernote_large required" name="content1" value="@yield('product.content')"></textarea>
+                </div>
+                <div class="form-group col-md-12">
+                     <label class="col-sm-2 col-form-label">Nội dung 2</label>
+                    <div class="col-sm-10">
+                        <input name="content2_title" type="text" class="form-control " value="@yield('product.content2_title')">
+                    </div>
+                    <br/><br/>
+                    <textarea class="form-control summernote_large" name="content2" value="@yield('product.content2')"></textarea>
+                </div>
+                <div class="form-group col-md-12">
+                     <label class="col-sm-2 col-form-label">Nội dung 3</label>
+                    <div class="col-sm-10">
+                        <input name="content3_title" type="text" class="form-control " value="@yield('product.content3_title')">
+                    </div>
+                    <br/><br/>
+                    <textarea class="form-control summernote_large" name="content3" value="@yield('product.content3')"></textarea>
                 </div>
             </div>
             
@@ -51,7 +77,7 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <label>Price</label>
-                            <input name="price" type="text" class="form-control required" value="@yield('product.price')">
+                            <input name="price" type="text" class="form-control" value="@yield('product.price')">
                         </div>
                         <div class="form-group">
                             <label>Sale (%)</label>
@@ -71,6 +97,11 @@
                         </select>
                     </div>
                     @endif
+                    <hr/><br/>
+                    <div class="form-group col-md-12">
+                        <label>Ảnh thumbnail </label>
+                        <input type="file" class="form-control-file" name="thumb"><br/>
+                    </div>
                     <hr/><br/>
                     <div class="col-md-12">
                         <div class="form-group">

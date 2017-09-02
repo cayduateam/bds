@@ -21,8 +21,13 @@ class CreateProductsTable extends Migration
             $table->text('price')->nullable();
             $table->string('sale')->nullable();
             $table->text('summary')->nullable();
-            $table->text('content')->nullable();
-            $table->string('image')->nullable();
+            $table->string('content1_title')->nullable();
+            $table->text('content1')->nullable();
+            $table->string('content2_title')->nullable();
+            $table->text('content2')->nullable();
+            $table->string('content3_title')->nullable();
+            $table->text('content3')->nullable();
+            $table->string('thumb')->nullable();
             $table->integer('hit')->nullable();
             $table->text('metakey')->nullable();
             $table->text('metades')->nullable();
