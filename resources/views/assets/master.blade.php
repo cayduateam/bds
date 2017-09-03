@@ -13,7 +13,7 @@
 	<meta name="keywords" content="bat dong san, bds nha trang, nha trang" />
 	<meta name="copyright" content="WIDO" />
 	<meta name="author" content="WIDO" />
-	<meta name="robots" content="index,follow" />
+	<meta name="robots" content="noindex,nofollow" />
 	<meta http-equiv="content-language" content="vi"/>
 	<meta name="geo.placename" content="Nha Trang, Viet Nam" />
 	<meta name="geo.region" content="VN-62" />
