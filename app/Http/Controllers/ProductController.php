@@ -58,6 +58,9 @@ class ProductController extends Controller
     public function parentChange(Request $request){
         $sub_parent = ProductCategory::select('id','name')->where('parent_id',$request->id)->where('status',1)->get();
         $res = '';
+        
+        //3 level not need now
+        /*
         foreach($sub_parent as $cate){
             $sub_sub_parent = ProductCategory::select('id','name')->where('parent_id',$cate->id)->where('status',1)->get();
             if(count($sub_sub_parent) > 0){
@@ -67,6 +70,12 @@ class ProductController extends Controller
                 }
                 $res .= '</optgroup>';
             }
+        }
+        */
+
+        //2 level
+        foreach($sub_parent as $sub){
+            $res .= '<option value="'.$sub->id.'">'.$sub->name.'</option>';
         }
         return $res;
         return view('dashboard.product-category.block.list',compact('id'))->render();
@@ -94,13 +103,13 @@ class ProductController extends Controller
         $product->sale = $request->sale;
         $product->summary = $request->summary;
         $product->content1_title = $request->content1_title;
-        $product->content2 = $request->content2;
-        $product->content2_title = $request->content2_title;
-        $product->content1 = $request->content3;
-        $product->content3_title = $request->content3_title;
         $product->content1 = $request->content1;
+        $product->content2_title = $request->content2_title;
+        $product->content2 = $request->content2;
+        $product->content3_title = $request->content3_title;
+        $product->content3 = $request->content3;
         $product->metakey = $request->metakey;
-        $product->metades = $request->summary;
+        $product->metades = $request->metades;
         $product->metarobot = $request->metarobot;
         $product->status = $request->status;
         $product->thumb = null;
@@ -138,6 +147,26 @@ class ProductController extends Controller
                 $image->save();
                 $image_id[] = $image->id;
             }
+        }
+        $product->content_image_title = $request->content_image_title;
+        $product->content_image = null;
+        if($request->hasFile('content_image'))
+        {
+            $files = $request->file('content_image');
+            $content_image_id = '';
+
+            foreach($files as $file){
+                $folder = rand(1,10);
+                $filename = bodauimage($file->getClientOriginalName());
+                $newname = strtotime(date('Y-m-d H:i:s', strtotime("+2 second"))).'_'.$filename;
+                $file->move('images/product/'.$folder.'/',$newname);
+
+                $image = new ProductImage;
+                $image->link = $folder.'/'.$newname;
+                $image->save();
+                $content_image_id .= $image->id.'%';
+            }
+            $product->content_image = rtrim($content_image_id,'%');
         }
 
         $product->save();

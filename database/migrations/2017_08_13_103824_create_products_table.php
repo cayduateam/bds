@@ -27,6 +27,8 @@ class CreateProductsTable extends Migration
             $table->text('content2')->nullable();
             $table->string('content3_title')->nullable();
             $table->text('content3')->nullable();
+            $table->string('content_image_title')->nullable();
+            $table->string('content_image')->nullable();
             $table->string('thumb')->nullable();
             $table->integer('hit')->nullable();
             $table->text('metakey')->nullable();

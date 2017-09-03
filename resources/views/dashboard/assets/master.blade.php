@@ -41,6 +41,7 @@
 <script src="js/bootstrap.min.js"></script>
 <script src="js/bootstrap-switch.min.js"></script>
 <script src="js/jquery.validate.min.js"></script>
+<script src="js/responsive-tabs.js"></script>
 <script src="summernote/summernote.min.js"></script>
 @yield('script')
 <script src="admin/js/admin.js"></script>
