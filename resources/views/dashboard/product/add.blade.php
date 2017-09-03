@@ -56,7 +56,7 @@
                         @endif
                         <div class="form-group">
                             <label>Sao</label>
-                            <select class="form-control required parent_cat" name="parent_id">
+                            <select class="form-control" name="star">
                                 @for($i=1; $i<6; $i++)
                                     <option value="{{$i}}">{{$i}} sao</option>
                                 @endfor

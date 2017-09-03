@@ -101,6 +101,7 @@ class ProductController extends Controller
         $product->alias = alias($product->title);
         $product->price = $request->price;
         $product->sale = $request->sale;
+        $product->star = $request->star;
         $product->summary = $request->summary;
         $product->content1_title = $request->content1_title;
         $product->content1 = $request->content1;
