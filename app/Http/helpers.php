@@ -100,3 +100,17 @@ function alias($str){
     $v1 = str_replace('  ', ' ', bodau($str));
     return str_replace(' ', '-', $v1);
 }
+function pagination($source,$total,$per_page,$page){
+    $count = ceil($total/$per_page);
+    $current_page = $page;
+    for($x=1; $x <= $count;$x++){
+        $number[] = $x;
+    }
+    $param = ($current_page -1 ) * $per_page;
+    $data_per_page = array_slice($source,$param,$per_page);
+
+    $data['num'] = $number;
+    $data['data'] = $data_per_page;
+
+    return $data;
+}

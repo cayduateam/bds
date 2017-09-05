@@ -4,7 +4,7 @@
 			<div class="row">
 				<div class="col-md-6">
 					<div class="logo">
-						<a href="/"><img src="images/logo2.png" alt="logo" style="max-height:50px"></a>
+						<a href="/"><img src="images/logo.png" alt="logo" style="max-height:50px"></a>
 						<h4 class="titleFooter">BĐS Nha Trang Online team</</h4>
 					</div>
 					<div class="content">

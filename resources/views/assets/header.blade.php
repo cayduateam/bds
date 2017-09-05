@@ -33,7 +33,7 @@
                     @if(isset($cat['sub']))
                       <div class="dropdown-menu">
                       @foreach($cat['sub'] as $sub)
-                        <a class="dropdown-item" href="{{route('category.view',$sub['alias'])}}">{{$sub['name']}}</a>
+                        <a class="dropdown-item" href="{{route('category.view.sub',$sub['alias'])}}">{{$sub['name']}}</a>
                       @endforeach
                       </div>
                     @endif

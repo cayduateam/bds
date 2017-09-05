@@ -51,12 +51,43 @@ class PageController extends Controller
      * Frontend view
      */
     public function viewCategory($category_alias){
-
-        $sub = ProductCategory::select('id','name','alias','hit')
+        $parent = ProductCategory::where('alias',$category_alias)->first();
+        $subs = ProductCategory::select('id','name','alias','hit')
         ->whereIn('parent_id',function($query) use ($category_alias){
             $query->select('id')->from('product_category')->where('alias',$category_alias);
         })->get();
-        return view('pages.category',compact('sub'));
+
+//        $data = array();
+//        foreach($sub_category as $sub){
+//
+//        }
+
+        return view('pages.category',compact('parent','subs'));
+    }
+    public function viewSubCategory($category_alias){
+        if(!isset($_REQUEST['page'])) $page = 1;
+        else $page = $_REQUEST['page'];
+
+        $category = ProductCategory::where('alias', $category_alias)->first();
+        $productid = ProductDetail::select('product_id')->where('product_category_id', $category->id)->get();
+        $productidArray = array();
+        foreach($productid->toArray() as $pro){
+            $productidArray[] = $pro['product_id'];
+        }
+        $productReturnbyPage = pagination($productidArray, count($productidArray), 10, $page);
+
+        $products = Product::select('id','title','alias','price','sale','summary','thumb','hit','created_at')->whereIn('id',$productReturnbyPage['data'])->where('status',1)->get();
+        $pagination = $productReturnbyPage['num'];
+        return view('pages.subcategory',compact('category','products','pagination','page'));
+    }
+
+    public function viewProduct($product_alias){
+//        $parent = ProductCategory::where('alias',$category_alias)->first();
+//        $subs = ProductCategory::select('id','name','alias','hit')
+//            ->whereIn('parent_id',function($query) use ($category_alias){
+//                $query->select('id')->from('product_category')->where('alias',$category_alias);
+//            })->get();
+        return view('pages.product');
     }
 
     public function about(){

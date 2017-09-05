@@ -22,6 +22,11 @@ Route::get('about','PageController@about');
 //Category
 Route::group(['prefix' => 'category'],function(){
     Route::get('view/{category_alias}',['as' => 'category.view','uses' => 'PageController@viewCategory']);
+    Route::get('view/sub/{category_alias}',['as' => 'category.view.sub','uses' => 'PageController@viewSubCategory']);
+});
+//Product
+Route::group(['prefix' => 'product'],function(){
+    Route::get('view/{product_alias}',['as' => 'product.view','uses' => 'PageController@viewProduct']);
 });
 
 // Route::get('/image', function()
