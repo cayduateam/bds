@@ -95,7 +95,7 @@
 </script>
 @include('assets.header')
 
-<section class="main_container" style="min-height: 1000px">
+<section class="main_container">
 @yield('content')
 </section>
 

@@ -67,11 +67,6 @@ h4 {
   font-family: 'Muli', sans-serif;
   font-weight: 400;
 }
-p {
-  font-size: 14px;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 300;
-}
 a {
   
   -webkit-transition: all 0.2s linear;
@@ -3377,6 +3372,14 @@ ul.contact-info2 i.fa {
     line-height: 23px;
   }
 }
+/*LyNguyen start here*/
+p{
+  margin: 0;
+  padding: 0;
+  color: #000015;
+  font-size: 14px;
+}
+
 .clearfix{
   display: block;
   content: "";
@@ -3385,6 +3388,10 @@ ul.contact-info2 i.fa {
 .content_tabs{
   overflow: hidden;
 }
+.red{
+  color: #f00;
+}
+.text_center{text-align: center}
 /*tabs */
 #respTabs{
   background: #fff;
@@ -3412,7 +3419,6 @@ ul.contact-info2 i.fa {
   padding-bottom: 12px;
   line-height: 1em;
   border-bottom: 1px solid #ccc;
-  text-align: center
 }
 .resp-tablistItem {
   display: inline;
@@ -3477,3 +3483,10 @@ ul.contact-info2 i.fa {
 }
 .left_content img{max-width:100%;}
 /*and category*/
+
+/*product*/
+.product_content img{
+  width: 100%!important;
+  height: 100%!important;
+}
+/*end product*/

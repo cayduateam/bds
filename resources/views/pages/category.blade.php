@@ -16,7 +16,7 @@
 			</div>
 		</div>
 		<div class="content_tabs">
-			<div class="tabs_class" id="listTabs">
+			<div class="tabs_class text_center" id="listTabs">
 				@foreach($subs as $sub)
 				<div>
 					<h2>{{$sub->name}}</h2>

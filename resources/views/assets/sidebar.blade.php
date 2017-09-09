@@ -1,6 +1,6 @@
 
 {{--search bds --}}
-<div class="sidebar-module-inset search_bds">
+<aside class="sidebar-module-inset search_bds">
 	<h4>Tìm kiếm bất động sản</h4>
 	<form  class="form-horizontal formdbs-form">
 	    <div class="form-group row">
@@ -54,7 +54,7 @@
 	        </div>
 	    </div>
 	</form>
-</div>
+</aside>
 {{--search bds end--}}
 
 {{--lastest_news--}}

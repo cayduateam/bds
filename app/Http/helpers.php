@@ -114,3 +114,12 @@ function pagination($source,$total,$per_page,$page){
 
     return $data;
 }
+function subString($text, $len)
+{  
+  mb_internal_encoding('UTF-8');
+  if( (mb_strlen($text, 'UTF-8') > $len)){
+    $text = mb_substr($text, 0, $len, 'UTF-8').'..';
+    // $text = mb_substr($text, 0, mb_strrpos($text," ", 'UTF-8'), 'UTF-8').'..';
+  }
+  return $text;
+}

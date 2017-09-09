@@ -82,12 +82,12 @@ class PageController extends Controller
     }
 
     public function viewProduct($product_alias){
-//        $parent = ProductCategory::where('alias',$category_alias)->first();
+       $product = json_decode(json_encode(Product::where('alias',$product_alias)->first()),true);
 //        $subs = ProductCategory::select('id','name','alias','hit')
 //            ->whereIn('parent_id',function($query) use ($category_alias){
 //                $query->select('id')->from('product_category')->where('alias',$category_alias);
 //            })->get();
-        return view('pages.product');
+        return view('pages.product',compact('product'));
     }
 
     public function about(){
