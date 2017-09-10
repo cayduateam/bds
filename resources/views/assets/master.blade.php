@@ -53,34 +53,25 @@
 	<base href="{{asset('')}}">
 
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <!-- Main Style -->
-    <link rel="stylesheet" type="text/css" href="css/main.css">
-    <!-- Responsive Style -->
-    <link rel="stylesheet" type="text/css" href="css/responsive.css">
-    <!--Fonts-->
-    <link rel="stylesheet" media="screen" href="fonts/font-awesome/font-awesome.min.css">
-    <link rel="stylesheet" media="screen" href="fonts/simple-line-icons.css">
-     
-    <!-- Extras -->
-	<link rel="stylesheet" type="text/css" href="extras/owl/owl.carousel.min.css">
-    <link rel="stylesheet" type="text/css" href="extras/owl/owl.theme.default.min.css">
-    <link rel="stylesheet" type="text/css" href="extras/animate.css">
-    <link rel="stylesheet" type="text/css" href="extras/normalize.css">
-    <link rel="stylesheet" type="text/css" href="extras/settings.css">
+	<link rel="stylesheet" type="text/css" href="css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="css/owl.carousel.min.css">
+	<link rel="stylesheet" type="text/css" href="css/owl.theme.default.min.css">
 	@yield('style')
-    <!-- Color CSS Styles  -->
-    <link rel="stylesheet" type="text/css" href="css/colors/red.css" media="screen" />       
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js">
-    </script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js">
-    </script>
-    <![endif]-->
-  	<!-- Google Font -->
-  	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-  	<!-- Theme style -->
 	<link rel="stylesheet" href="css/public.css">
+	<link rel="stylesheet" href="css/reponsive.css">
+  
+
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js">
+  </script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js">
+  </script>
+  <![endif]-->
+	<!-- Google Font -->
+	<link rel="stylesheet" media="screen" href="fonts/font-awesome/font-awesome.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 
 </head>
 <body id="body">
@@ -109,28 +100,8 @@
 <!-- Bootstrap JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script> 
 <script src="js/bootstrap.min.js"></script>
-<!--Text Rotator-->
-<script src="js/jquery.mixitup.js"></script>
-
-<!-- OWL Carousel -->
-<!-- <script src="js/owl.carousel.min.js"></script> -->
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/public.js"></script>
 @yield('script')
-<!-- WayPoint -->
-<!--WOW Scroll Spy-->
-<script src="js/wow.js"></script>
-<script src="js/waypoints.min.js"></script>
-<!-- CounterUp -->
-<script src="js/jquery.counterup.min.js"></script>
-<!-- ScrollTop -->
-<script src="js/scroll-top.js"></script>
-<!-- Appear --><!-- 
-<script src="js/jquery.appear.js"></script>
-<script src="js/jquery.vide.js"></script> -->
-<script src="js/responsive-tabs.js"></script>
- <!-- All JS plugin Triggers -->
-<script src="js/main.js"></script>
-<!-- <script src="assets/js/color-switcher.js"></script> -->
-<script src="js/js.js"></script>
-
 </body>
 </html>

@@ -27,7 +27,7 @@ $('#lastest_news').owlCarousel( {
     center: true,
     items: 3,
     margin: 30,
-    autoplay: false,
+    autoplay: true,
     dots:true,
     nav:true,
     autoplayTimeout: 8500,

@@ -1,0 +1,76 @@
+/* Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px){}
+
+// Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px){}
+
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) { 
+	
+}
+
+/* Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) { 
+	.navbar-brand{
+		padding: 1vmax 0 0;
+	}
+	.navbar-brand img{
+		height: 65px;
+	}
+	.navbar-brand h1{
+		display: inline-block;
+		font-size: 2vmax;
+	}
+}
+
+
+/* Extra small devices (portrait phones, less than 576px)*/
+@media (max-width: 575px){}
+
+/* Small devices (landscape phones, less than 768px)*/
+@media (max-width: 767px){}
+
+/* Medium devices (tablets, less than 992px)*/
+@media (max-width: 991px){
+	.carousel-inner>.carousel-item .link-slider{top:20%;}
+	h3{font-size: 3vmax;}
+}
+
+/* Large devices (desktops, less than 1200px)*/
+@media (max-width: 1199px) {
+
+}
+
+
+/* Extra small devices (portrait phones, less than 576px)*/
+@media (max-width: 575px){
+	.navbar{
+		padding:.5rem 0;
+	}
+	.navbar-brand h1{
+		font-size: 2vmax;
+	}
+}
+
+/* Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) and (max-width: 767px){
+	.navbar-brand h1{
+		font-size: 3vmax;
+	}
+}
+
+/* Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) and (max-width: 991px){
+	#main-menu .nav-item .nav-link{
+	  padding: 1vmax;
+	}
+	.navbar-brand h1{
+		font-size: 1.4vmax;
+	}
+}
+
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) and (max-width: 1199px){}
+
+/* Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px){}

@@ -5,7 +5,6 @@
 @endsection
 
 @section('script')
-	<script src="js/owl.carousel.min.js"></script>
 	<script src="js/index.js"></script>
 @endsection
 

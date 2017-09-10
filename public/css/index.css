@@ -17,7 +17,6 @@
     width: 100%;
     text-align: center;
     bottom: 0;
-    font-size: 30px;
     color: #fff;
     text-transform: uppercase
 }
@@ -38,6 +37,45 @@
     color: #8f3302;
     font-weight: bold;
 }
+.carousel-control-next, .carousel-control-prev{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 15%;
+    color: #fff;
+    text-align: center;
+    opacity: .5;
+}
+
+.carousel-control-next{right: 0}
+.carousel-control-prev{left: 0}
+.carousel-control-next-icon, .carousel-control-prev-icon{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: transparent no-repeat center center;
+    background-size: 100% 100%;
+    font-size: 4vmax;
+}
+.carousel-control-next-icon{
+    background-image: url(data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' f…%3Cpath d='M1.5 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E);
+}
+.carousel-control-prev-icon {
+    background-image: url(data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' f…3E%3Cpath d='M4 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E);
+}
+.carousel-control-next-icon:after {
+    content: ' \2771';
+}
+.carousel-control-prev-icon:after {
+    content: ' \2770';
+}
+.carousel-control-next:hover, .carousel-control-prev:hover{color: #e5ff0f}
 /*end slider*/
 
 /*service*/
