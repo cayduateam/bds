@@ -33,9 +33,12 @@ class PageController extends Controller
 
         $lastest_news = News::select('title','alias','hit')->where('status',1)->orderBy('hit','desc')->orderBy('created_at','desc')->get();
 
+        $footer = Footer::first();
+
         view()->share('proCat',$proCat);
         view()->share('category',$category);
         view()->share('lastest_news',$lastest_news);
+        view()->share('footer',$footer);
     }
     /**
      * Display a listing of the resource.
@@ -82,12 +85,13 @@ class PageController extends Controller
     }
 
     public function viewProduct($product_alias){
-       $product = json_decode(json_encode(Product::where('alias',$product_alias)->first()),true);
+        $product = Product::where('alias',$product_alias)->first();
+        $productArray = json_decode(json_encode($product),true);
 //        $subs = ProductCategory::select('id','name','alias','hit')
 //            ->whereIn('parent_id',function($query) use ($category_alias){
 //                $query->select('id')->from('product_category')->where('alias',$category_alias);
 //            })->get();
-        return view('pages.product',compact('product'));
+        return view('pages.product',compact('product','productArray'));
     }
 
     public function about(){

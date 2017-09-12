@@ -27,3 +27,40 @@ ul.thumbnails-carousel li {
 .indicators-fix {
 	bottom: 70px;
 }
+#product_slide .thumbnails-carousel li img{
+	height: 48px;
+	width: auto;
+
+}
+/*product slide*/
+.carousel-control{
+	position: absolute; */
+  top: 0; 
+  bottom: 0; 
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 15%;
+  color: #fff;
+  text-align: center;
+  opacity: .5;
+}
+.glyphicon-chevron-right, .glyphicon-chevron-left{
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: transparent no-repeat center center;
+  background-size: 100% 100%;
+  font-size: 4vmax;
+}
+.glyphicon-chevron-right:after {
+  content: ' \2771';
+}
+.glyphicon-chevron-left:after {
+  content: ' \2770';
+}
+.glyphicon-chevron-right:hover, .glyphicon-chevron-left:hover{color: #e5ff0f}
+/*end product slide*/

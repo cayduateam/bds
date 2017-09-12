@@ -53,5 +53,7 @@
 	}
 
 })(window, jQuery);
-
-$('.thumbnails-carousel').thumbnailsCarousel();
+$(document).ready(function(){
+	$('#listTabs').responsiveTabs();
+	$('.thumbnails-carousel').thumbnailsCarousel();
+});

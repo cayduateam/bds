@@ -70,7 +70,7 @@ $(document).ready(function(){
         }
     });
 
-    $(".checkonoff").bootstrapSwitch();
+    // $(".checkonoff").bootstrapSwitch();
     //list tab
     $('#listTabs').responsiveTabs();
     //end list tab

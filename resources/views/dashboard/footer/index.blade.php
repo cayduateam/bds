@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="row header">
-        <div class="col-md-10 col-xs-10"><h1>Giới thiệu team</h1></div>
+        <div class="col-md-10 col-xs-10"><h1>Footer</h1></div>
         <div class="col-md-2 col-xs-2">
             <a href="/dashboard"><button type="button" class="btn btn-primary">Back</button></a>
         </div>
@@ -23,7 +23,7 @@
 		    	</div>
 		    	<div class="form-group">
 					<label>Mô tả</label>
-	            	<textarea class="form-control summernote required"  name="section1">{{$footer->section1}}</textarea>
+	            	<textarea class="form-control required"  name="section1">{{$footer->section1}}</textarea>
             	</div>
                 <hr/>
                 <div class="form-group row">
@@ -34,7 +34,7 @@
                 </div>
                 <div class="form-group">
                     <label>Mô tả</label>
-                    <textarea class="form-control summernote "  name="section2">{{$footer->section2}}</textarea>
+                    <textarea class="form-control"  name="section2">{{$footer->section2}}</textarea>
                 </div>
                 <hr/>
                 <div class="form-group row">
@@ -45,7 +45,7 @@
                 </div>
                 <div class="form-group">
                     <label>Mô tả</label>
-                    <textarea class="form-control summernote "  name="section3">{{$footer->section3}}</textarea>
+                    <textarea class="form-control"  name="section3">{{$footer->section3}}</textarea>
                 </div>
             </div>
             <div class="form-group col-md-3">

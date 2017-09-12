@@ -69,8 +69,7 @@
                                 <option value="0">Disable</option>
                             </select>
                         </div>
-                        <hr/>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        
                     </div>
                 </div>
             </div>
@@ -170,6 +169,10 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <hr/>
+        <div class="form-group row pul-right text-center">
+            <button type="submit" class="btn btn-primary">Submit</button>
         </div>
     </form>
 @endsection

@@ -56,8 +56,8 @@
 	<link rel="stylesheet" type="text/css" href="css/normalize.css">
 	<link rel="stylesheet" type="text/css" href="css/owl.carousel.min.css">
 	<link rel="stylesheet" type="text/css" href="css/owl.theme.default.min.css">
-	@yield('style')
 	<link rel="stylesheet" href="css/public.css">
+	@yield('style')
 	<link rel="stylesheet" href="css/reponsive.css">
   
 
@@ -88,6 +88,7 @@
 
 <section class="main_container">
 @yield('content')
+<div id="overlay_popup"></div>
 </section>
 
 

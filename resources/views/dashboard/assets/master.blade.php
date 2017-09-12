@@ -7,7 +7,6 @@
   <base href="{{asset('')}}">
   <!-- Bootstrap 3.3.7 -->
   <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="extras/animate.css">
   <!-- Font Awesome -->
   <link rel="stylesheet" media="screen" href="fonts/font-awesome/font-awesome.min.css">
   <link rel="stylesheet" href="summernote/summernote.css">
@@ -39,7 +38,7 @@
 <script src="js/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script> 
 <script src="js/bootstrap.min.js"></script>
-<script src="js/bootstrap-switch.min.js"></script>
+<!-- <script src="js/bootstrap-switch.min.js"></script> -->
 <script src="js/jquery.validate.min.js"></script>
 <script src="js/responsive-tabs.js"></script>
 <script src="summernote/summernote.min.js"></script>
