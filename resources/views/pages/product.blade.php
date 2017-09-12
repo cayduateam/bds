@@ -26,12 +26,9 @@
               $i++;
             ?>
             <div class="carousel-item {!! ($i==1)? 'active':'' !!}">
-              <img src="images/product/{{$image->link}}" alt="{{$alt[0]}}" class="img-responsive">
+              <img data-fancybox="gallery" src="images/product/{{$image->link}}" alt="{{$alt[0]}}" class="img-responsive">
             </div>
           @endforeach
-          <!-- <div class="carousel-item active">
-            <img src="https://s28.postimg.org/4237b0cjh/image.jpg" alt="1.jpg" class="img-responsive">
-          </div> -->
         </div>
 
         <a class="left carousel-control" href="#product_slide" role="button" data-slide="prev">
@@ -61,6 +58,7 @@
       <div class="tabs_class" id="listTabs">
         @for($i=1; $i< 4; $i++)
           @if($productArray['content'.$i] != null)
+            
             <div>
               <h2>{{($productArray['content'.$i.'_title'] != null)? subString($product['content'.$i.'_title'],40) : 'Information'}}</h2>
               <div>
