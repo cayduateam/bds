@@ -6,7 +6,22 @@
 
 /* Large devices (desktops, 992px and up)*/
 @media (min-width: 992px) { 
-	
+	.fancybox-thumbs {
+    top: auto;
+    width: auto;
+    bottom: 0;
+    left: 0;
+    right : 0;
+    height: 95px;
+    padding: 10px;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.3);
+  }
+  
+  .fancybox-show-thumbs .fancybox-inner {
+    right: 0;
+    bottom: 95px;
+  }
 }
 
 /* Extra large devices (large desktops, 1200px and up)*/
@@ -34,6 +49,12 @@
 @media (max-width: 991px){
 	.carousel-inner>.carousel-item .link-slider{top:20%;}
 	h3{font-size: 3vmax;}
+	.product_content img{
+	  max-width: 100%!important;
+	  max-height: 100%!important; 
+    width: 100%!important;
+    height: 100%!important;
+	}
 }
 
 /* Large devices (desktops, less than 1200px)*/

@@ -18,6 +18,8 @@ Route::get('/','PageController@index');
 Route::get('index','PageController@index');
 
 Route::get('about','PageController@about');
+Route::get('contact','PageController@contact');
+Route::post('contact_send','PageController@sendContact')->name('contact.send');
 
 //Category
 Route::group(['prefix' => 'category'],function(){

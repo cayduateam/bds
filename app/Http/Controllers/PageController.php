@@ -95,8 +95,12 @@ class PageController extends Controller
     }
 
     public function about(){
+        $about = About::find(1);
+        return view('pages.about',compact('about'));
+    }
 
-        echo 'about';
+    public function contact(){
+        return view('pages.contact');
     }
 
     /**

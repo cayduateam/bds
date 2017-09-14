@@ -56,4 +56,37 @@
 $(document).ready(function(){
 	$('#listTabs').responsiveTabs();
 	$('.thumbnails-carousel').thumbnailsCarousel();
+	
+
+	$('.tab_class_link').click(function(event){
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 1000, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    }
+	});
+
+	$('.product_content .content_class img').each(function(){
+		var src= $(this).attr('src');
+		$(this).before('<a href="'+src+'" data-fancybox="images"><img src="'+src+'" /></a>');
+		$(this).addClass('hidden');
+		$(this).empty();
+	});
+	$('[data-fancybox="images"]').fancybox({
+	  thumbs : {
+	    autoStart : true
+	  }
+	})
+
 });

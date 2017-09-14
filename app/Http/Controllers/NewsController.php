@@ -36,22 +36,8 @@ class NewsController extends Controller
     public function create()
     {
         $url = \route('news.store');
-        $parent = Category::where('parent_id',0)->where('status',1)->get();
-        $category=[];
-        foreach($parent as $pa){
-            $category[$pa->id]['name'] = $pa->name;
-            $category[$pa->id]['alias'] = $pa->alias;
-            $category[$pa->id]['status'] = $pa->status;
-            $category[$pa->id]['created_at'] = $pa->created_at;
-
-            $submenu = Category::where('parent_id',$pa->id)->where('status',1)->get();
-            foreach($submenu as $sub){
-                $category[$pa->id]['sub'][$sub->id]['name'] = $sub->name;
-                $category[$pa->id]['sub'][$sub->id]['alias'] = $sub->alias;
-                $category[$pa->id]['sub'][$sub->id]['status'] = $sub->status;
-                $category[$pa->id]['sub'][$sub->id]['created_at'] = $sub->created_at;
-            }
-        }
+        $category = Category::where('parent_id',0)->where('status',1)->get();
+        
         return view('dashboard.news.add',compact('category','url'));
     }
 
@@ -105,7 +91,7 @@ class NewsController extends Controller
         $news->save();
 
         $news_id = $news->id;
-        foreach($request->parent_id as $category_id){
+        foreach($request->category_id as $category_id){
             $detail = new NewsDetail;
             $detail->news_id = $news_id;
             $detail->category_id = $category_id;

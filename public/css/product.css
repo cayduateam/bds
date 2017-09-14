@@ -64,3 +64,20 @@ ul.thumbnails-carousel li {
 }
 .glyphicon-chevron-right:hover, .glyphicon-chevron-left:hover{color: #e5ff0f}
 /*end product slide*/
+
+.product_content .tabs_class{
+  display: block;
+  margin: 1em 0 0 0;
+  padding: 0;
+  padding-bottom: 12px;
+  line-height: 1em;
+  border-bottom: 1px solid #ccc;
+}
+.product_content .tabs_class li{
+  display: inline;
+  cursor: pointer;
+  background: #eee;
+  padding: 10px 20px;
+  border: 1px solid #ddd;
+  margin-right: 0.1em;
+}

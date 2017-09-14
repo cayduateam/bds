@@ -6,12 +6,14 @@
 @section('script')
 <script src="js/responsive-tabs.js"></script>
 <script src="js/product.js"></script>
+
 @endsection
 
 @section('content')
 <div class="container-fluid">
   <div class="col-md-9 col-xs-12 left_content">
     <h1 class="text-center">{{$productArray['title']}}</h1>
+    <p class="hidden">{!!bodauImage($productArray['alias'])!!}</p>
     <div class="product_header clearfix row">
       <!-- start slide -->
       <div id="product_slide" class="carousel slide" data-ride="carousel">
@@ -26,7 +28,7 @@
               $i++;
             ?>
             <div class="carousel-item {!! ($i==1)? 'active':'' !!}">
-              <img data-fancybox="gallery" src="images/product/{{$image->link}}" alt="{{$alt[0]}}" class="img-responsive">
+              <img src="images/product/{{$image->link}}" alt="{{$alt[0]}}" class="img-responsive">
             </div>
           @endforeach
         </div>
@@ -55,10 +57,9 @@
       </div>
     </div>
     <div class="product_content">
-      <div class="tabs_class" id="listTabs">
+      <!-- <div class="tabs_class" id="listTabs">
         @for($i=1; $i< 4; $i++)
           @if($productArray['content'.$i] != null)
-            
             <div>
               <h2>{{($productArray['content'.$i.'_title'] != null)? subString($product['content'.$i.'_title'],40) : 'Information'}}</h2>
               <div>
@@ -67,7 +68,36 @@
             </div>
           @endif
         @endfor
+      </div> -->
+
+      <ul class="tabs_class d-sm-none">
+        @for($i=1; $i< 4; $i++)
+          @if($productArray['content'.$i] != null)
+            <li>
+            <?php
+              $alias = '#'.$productArray['alias'].'-'.bodauimage($productArray['content'.$i.'_title']);
+            ?>
+              <a class="tab_class_link" href="{{route('product.view',$productArray['alias'])}}{!!$alias!!}">{{($productArray['content'.$i.'_title'] != null)? subString($product['content'.$i.'_title'],40) : 'Information'}}</a>
+            </li>
+          @endif
+        @endfor
+      </ul>
+      <div class="content_class">
+        @for($i=1; $i< 4; $i++)
+          @if($productArray['content'.$i] != null)
+            <?php
+              $alias = $productArray['alias'].'-'.bodauimage($productArray['content'.$i.'_title']);
+            ?>
+            <div >
+              <p id="{!!$alias!!}">{{($productArray['content'.$i.'_title'] != null)? subString($product['content'.$i.'_title'],40) : 'Information'}}</p>
+              <div>
+                {!!$productArray['content'.$i]!!}
+              </div>
+            </div>
+          @endif
+        @endfor
       </div>
+
     </div>
   </div>
   <div class="col-md-3 hidden-sm-down sidebar">

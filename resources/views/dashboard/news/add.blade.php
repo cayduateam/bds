@@ -51,15 +51,9 @@
                     @if(isset($category))
                     <div class="col-md-12">
                     	<label>Danh mục cha</label>
-                        <select multiple class="form-control required u-full-width multi-select" name="parent_id[]" size="{{(count($category) > 15)?count($category):15}}">
-                            @foreach($category as $parent)
-                                @if(isset($parent['sub']))
-                                <optgroup label="{{$parent['name']}}">
-                                    @foreach($parent['sub'] as $id => $sub)
-                                        <option value="{{$id}}">{{$sub['name']}}</option>
-                                    @endforeach
-                                </optgroup>
-                                @endif
+                        <select multiple class="form-control required u-full-width multi-select" name="category_id[]" size="{{(count($category) > 15)?count($category):15}}">
+                            @foreach($category as $category)
+                                <option value="{{$category->id}}">{{$category->name}}</option>
                             @endforeach
                         </select>
                     </div>

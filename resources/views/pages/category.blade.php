@@ -4,6 +4,8 @@
 @endsection
 
 @section('script')
+<script src="js/responsive-tabs.js"></script>
+<script src="js/category.js"></script>
 @endsection
 
 @section('content')
