@@ -199,7 +199,7 @@ a:hover{
 /*product*/
 .product_content img{
   max-width: 100%!important;
-   height: 100%!important; 
+  /*height: 100%!important; */
   max-height: 700px;
 }
 #overlay_popup{
