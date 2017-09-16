@@ -16,11 +16,11 @@
           <img class="d-block w-100" src="images/slider/slide3.jpg" alt="First slide">
             <div class="content-slider">
                 <h3 class="heading wow animated bounceInDown">KHU ĐÔ THỊ LÊ HỒNG PHONG II</h3>
-                <p class="animated bounceInUp">Fully Professional one page template</p>
+                <p class="wow animated bounceInUp">Fully Professional one page template</p>
                 
             </div>
-            <div class="link-slider">
-                <a class="btn btn-default slider-btn animated fadeIn" href="#">Xem ngay</a>
+            <div class="link-slider wow animated bounce">
+                <a class="btn btn-default slider-btn" href="#">Xem ngay</a>
             </div>
         </div>
         <div class="carousel-item">
@@ -29,8 +29,8 @@
                 <h3 class="heading wow animated bounceInDown">KHU ĐÔ THỊ LÊ HỒNG PHONG II</h3>
                 <p class="animated bounceInUp">Fully Professional one page template</p>
             </div>
-            <div class="link-slider">
-                <a class="btn btn-default slider-btn animated fadeIn" href="#">Xem ngay</a>
+            <div class="link-slider wow animated bounce">
+                <a class="btn btn-default slider-btn" href="#">Xem ngay</a>
             </div>
         </div>
         <div class="carousel-item">
@@ -39,8 +39,8 @@
                 <h3 class="heading wow animated bounceInDown">KHU ĐÔ THỊ LÊ HỒNG PHONG II</h3>
                 <p class="animated wow bounceInUp">Fully Professional one page template</p>
             </div>
-            <div class="link-slider">
-                <a class="btn btn-default slider-btn animated fadeIn" href="#">Xem ngay</a>
+            <div class="link-slider wow animated bounce">
+                <a class="btn btn-default slider-btn" href="#">Xem ngay</a>
             </div>
         </div>
       </div>
@@ -58,9 +58,9 @@
 	{{--service--}}
     <p class="line"></p>
 	<div class="service container-fluid">
-		<h2 class="title wow animated wobble text-center hidden-xs-down">DỊCH VỤ CỦA CHÚNG TÔI</h2>
+		<h2 class="title text-center wow animated wobble">DỊCH VỤ CỦA CHÚNG TÔI</h2>
 		<div class="row">
-			<div class="col-md-6 col-xs-12 service-left wow bounceInLeft animated">
+			<div class="col-md-6 col-xs-12 service-left wow animated bounceInLeft">
                 <ul>
                     <li>
                         <span class="text-right circle">
@@ -156,7 +156,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 col-xs-12 searchbds-right">
-                    <ul class="list-1 list-left right wow bounceInLeft animated">
+                    <ul class="list-1 list-left right wow animated bounceInLeft">
                         <li><h4 class="autoLeft fixTop red">Luôn mang lại chất lượng, giá trị của từng sản phẩm, dịch vụ</h4><div class="clear"></div></li>
                         <li><h4 class="autoLeft fixTop red">Uy tín doanh nghiệp và hiệu quả của chất lượng sản phẩm luôn được đặt lên hàng đầu</h4><div class="clear"></div></li>
                         <li><h4 class="autoLeft fixTop red">Sống và làm việc theo nguyên tắc “Cả hai cùng thắng”</h4><div class="clear"></div></li>
