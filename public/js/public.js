@@ -44,6 +44,8 @@
 
 }(jQuery));
 jQuery( document ).ready(function() {
+    new WOW().init();
+    AOS.init();
     jQuery(".parallax").parallax();
     
     //list tab

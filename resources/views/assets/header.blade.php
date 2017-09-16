@@ -10,14 +10,14 @@
         </button>
         <!-- Brand -->
         <div class="row">
-          <div class="col-xs-9 col-md-4">
-            <a class="navbar-brand" href="/">
-              <img src="images/logo2.png" alt="">
-              <h1>BDS Nha Trang online</h1>
+          <div class="col-xs-9 col-md-4" data-aos="flip-left">
+            <a class="navbar-brand wow animated wobble" href="/">
+              <img src="images/logo2.png" alt="logo-bds-nha-trang">
+              <h1>BDS Nha Trang online111</h1>
             </a>    
           </div>
           <div class="col-xs-3 col-md-8">
-            <div class="collapse navbar-toggleable-sm pull-xs-left pull-md-right" id="main-menu">
+            <div class="collapse navbar-toggleable-sm pull-xs-left pull-md-right wow animated bounceInRight" id="main-menu">
               <!-- Navbar Starts -->
               <ul class="nav nav-inline">
                 <li class="nav-item">

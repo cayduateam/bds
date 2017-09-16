@@ -98,7 +98,7 @@
     <div class="searchbds" style="background: url('images/search-background.jpg') 50% -79.5px no-repeat;">
         <div class="container searchbds-container">
             <div class="row">
-                <div class="col-md-6 col-xs-12 formdbs-container">
+                <div class="col-md-6 col-xs-12 formdbs-container" data-aos="flip-left">
                     <div class="formbds-content">
                         <h3>Tìm kiếm bất động sản</h3>
                         <form  class="form-horizontal formdbs-form">
@@ -168,7 +168,7 @@
 	</div>
 	{{--end search with parallax --}}
     <p class="line"></p>
-    <div id="lastest_news" class="owl-carousel">
+    <div id="lastest_news" class="owl-carousel" data-aos="zoom-in-right">
         <div class="item">
           <div class="shadow-effect">
             <div class="item-img">
