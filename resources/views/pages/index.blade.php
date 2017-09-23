@@ -9,7 +9,7 @@
 @endsection
 
 @section('content')
-	{{--slider--}}
+	<!-- slider -->
     <div id="main_slider" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             @foreach($lastest_product as $key => $product)
@@ -34,9 +34,9 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
-	{{--end slider--}}
+	<!-- end slider -->
 
-	{{--service--}}
+	<!-- service -->
     <p class="line"></p>
 	<div class="service container-fluid">
 		<h2 class="title text-center wow animated wobble">DỊCH VỤ CỦA CHÚNG TÔI</h2>
@@ -76,9 +76,9 @@
 		</div>
 	</div>
 	<p class="line"></p>
-	{{--end service --}}
+	<!-- end service -->
 
-	{{--search with parallax --}}
+	<!-- search with parallax  -->
 	<!-- <div class="searchbds parallax" data-speed="0.5" style="background: url('images/search-background.jpg') 50% -79.5px no-repeat;"> -->
     <div class="searchbds" style="background: url('images/search-background.jpg') 50% -79.5px no-repeat;">
         <div class="container searchbds-container">
@@ -159,10 +159,10 @@
             </div>
         </div>
 	</div>
-	{{--end search with parallax --}}
+	<!-- end search with parallax  -->
 
     <p class="line"></p>
-    {{--lastest news--}}
+    <!-- lastest news -->
     <div id="lastest_news" class="owl-carousel" data-aos="zoom-in-right">
         @if(isset($lastest_news))
             @foreach($lastest_news as $news)
@@ -179,5 +179,5 @@
             @endforeach
         @endif
     </div>
-    {{--end lastest news--}}
+    <!-- end lastest news -->
 @endsection

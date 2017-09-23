@@ -4,7 +4,7 @@
   <section id="header">
     <!-- Navbar Starts -->
     <nav class="navbar navbar-expand-md navbar-light bg-light">
-      <a class="navbar-brand wow animated wobble" href="/">
+      <a class="navbar-brand {!! session()->get('detect') != 'mobile'?'wow animated wobble':'' !!} " href="/">
         <img src="images/logo2.png" alt="logo-bds-nha-trang">
         <h1>BDS Nha Trang online</h1>
       </a> 
