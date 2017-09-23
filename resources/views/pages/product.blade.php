@@ -11,6 +11,7 @@
 
 @section('content')
 <div class="container-fluid">
+  <div class="row">
   <div class="col-md-9 col-xs-12 left_content">
     <h1 class="text-center">{{$productArray['title']}}</h1>
     <p class="hidden">{!!bodauImage($productArray['alias'])!!}</p>
@@ -106,18 +107,17 @@
         {!!$productArray['summary']!!}
       </div>
     </aside>
-    <aside class="product_footer clearfix">
-      <div class="service-right wow animated bounceInRight">
+    <aside class="service-contact wow animated bounceInRight">
         <i class="fa fa-quote-left" aria-hidden="true"></i>
         <div class="detail">
-          <p>Vui lòng liên hệ để được tư vẫn hỗ trợ nhanh chóng nhất</p>
-          <p>Ms Thủy: 0935 044 567</p>
+          <h5>Vui lòng liên hệ để được tư vẫn hỗ trợ nhanh chóng nhất</h5>
+          <h4>Ms Thủy: 0935 044 567</h4>
         </div>
         <i class="fa fa-quote-right" aria-hidden="true"></i>
-      </div>
-    </aside>
-    <div class="line"></div>
+      </aside>
+      <div class="line"></div>
     @include('assets.sidebar')
+  </div>
   </div>
 </div>
 

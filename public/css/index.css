@@ -75,7 +75,7 @@
 /*service*/
 .service{
     background: #f9f9f9;
-    margin-top: 2vmin;
+    margin: 2vmin 0;
 }
 .service .title{
     padding: 5px 0;

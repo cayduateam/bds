@@ -32,10 +32,6 @@
 	.navbar-brand img{
 		height: 65px;
 	}
-	.navbar-brand h1{
-		display: inline-block;
-		font-size: 2vmax;
-	}
 }
 
 
@@ -87,25 +83,17 @@
 	.navbar{
 		padding:.5rem 0;
 	}
-	.navbar-brand h1{
-		font-size: 2vmax;
-	}
 }
 
 /* Small devices (landscape phones, 576px and up)*/
 @media (min-width: 576px) and (max-width: 767px){
-	.navbar-brand h1{
-		font-size: 3vmax;
-	}
+	
 }
 
 /* Medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) and (max-width: 991px){
 	#main-menu .nav-item .nav-link{
 	  padding: 1vmax;
-	}
-	.navbar-brand h1{
-		font-size: 1.4vmax;
 	}
 }
 

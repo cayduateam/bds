@@ -1,11 +1,11 @@
 @extends('assets.master')
 
 @section('style')
-	<link rel="stylesheet" href="css/index.css">
+<link rel="stylesheet" href="css/index.css">
 @endsection
 
 @section('script')
-	<script src="js/index.js"></script>
+<script src="js/index.js"></script>
 @endsection
 
 @section('content')
@@ -80,7 +80,7 @@
 
 	<!-- search with parallax  -->
     @if(session()->get('detect') != 'mobile')
-    <div class="searchbds parallax" data-speed="0.5" style="background: url('images/search-background.jpg') 50% -79.5px no-repeat;">
+    <div class="searchbds parallax" data-speed="0.5" style="padding: 3vmax 0;background: url('images/search-background.jpg') 50% -79.5px no-repeat;">
     @else
     <div class="searchbds" style="background: url('images/search-background.jpg') 50% -79.5px no-repeat;">
     @endif
@@ -147,8 +147,8 @@
                     <div class="col-xs-12 service-contact wow animated bounceInRight">
                         <i class="fa fa-quote-left red" aria-hidden="true"></i>
                         <div class="detail">
-                            <h6>Vui lòng liên hệ để được tư vẫn hỗ trợ nhanh chóng nhất</h6>
-                            <h5><b>Ms Thủy: 0935 044 567</b></h5>
+                            <h5>Vui lòng liên hệ để được tư vẫn hỗ trợ nhanh chóng nhất</h5>
+                            <h4><b>Ms Thủy: 0935 044 567</b></h4>
                         </div>
                         <i class="fa fa-quote-right red" aria-hidden="true"></i>
                     </div>
