@@ -79,8 +79,11 @@
 	<!-- end service -->
 
 	<!-- search with parallax  -->
-	<!-- <div class="searchbds parallax" data-speed="0.5" style="background: url('images/search-background.jpg') 50% -79.5px no-repeat;"> -->
+    @if(session()->get('detect') != 'mobile')
+    <div class="searchbds parallax" data-speed="0.5" style="background: url('images/search-background.jpg') 50% -79.5px no-repeat;">
+    @else
     <div class="searchbds" style="background: url('images/search-background.jpg') 50% -79.5px no-repeat;">
+    @endif
         <div class="container searchbds-container">
             <div class="row">
                 <div class="col-md-6 col-xs-12 formdbs-container" data-aos="flip-left">
@@ -88,8 +91,8 @@
                         <h3>Tìm kiếm bất động sản</h3>
                         <form  class="form-horizontal formdbs-form">
                             <div class="form-group row">
-                                <label class="col-sm-3 col-form-label text-right">Loại hình</label>
-                                <div class="col-sm-9">
+                                <label class="col-3 col-form-label text-right">Loại hình</label>
+                                <div class="col-9">
                                     <select class="form-control">
                                         <option>Dự án</option>
                                         <option>Nhà đất phố</option>
@@ -99,8 +102,8 @@
                             </div>
 
                             <div class="form-group row">
-                                <label class="col-sm-3 control-label text-right">Chi tiết</label>
-                                <div class="col-sm-9">
+                                <label class="col-3 control-label text-right">Chi tiết</label>
+                                <div class="col-9">
                                     <select class="form-control">
                                         <option>Căn hộ</option>
                                         <option>Đất nền</option>
@@ -109,8 +112,8 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-sm-3 control-label text-right">Phường xã</label>
-                                <div class="col-sm-9">
+                                <label class="col-3 control-label text-right">Phường xã</label>
+                                <div class="col-9">
                                     <select class="form-control">
                                         <option>--All--</option>
                                         <option>Thành phố Nha Trang</option>
@@ -122,8 +125,8 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-sm-3 control-label text-right">Giá tiền</label>
-                                <div class="col-sm-9">
+                                <label class="col-3 control-label text-right">Giá tiền</label>
+                                <div class="col-9">
                                     <select class="form-control">
                                         <option>--All--</option>
                                         <option>Dưới 1 tỷ</option>
@@ -141,19 +144,17 @@
                     </div>
                 </div>
                 <div class="col-md-6 col-xs-12 searchbds-right">
-                    <!-- <div class="col-xs-12 service-right wow animated bounceInRight">
-                        <i class="fa fa-quote-left" aria-hidden="true"></i>
+                    <div class="col-xs-12 service-contact wow animated bounceInRight">
+                        <i class="fa fa-quote-left red" aria-hidden="true"></i>
                         <div class="detail">
-                            <p>Vui lòng liên hệ để được tư vẫn hỗ trợ nhanh chóng nhất</p>
-                            <P>Ms Thủy: 0935 044 567</P>
+                            <h6>Vui lòng liên hệ để được tư vẫn hỗ trợ nhanh chóng nhất</h6>
+                            <h5><b>Ms Thủy: 0935 044 567</b></h5>
                         </div>
-                        <i class="fa fa-quote-right" aria-hidden="true"></i>
-                    </div> -->
-                    <ul class="list-1 list-left right wow animated bounceInLeft">
-                        <li><h4 class="autoLeft fixTop red">Luôn mang lại chất lượng, giá trị của từng sản phẩm, dịch vụ</h4><div class="clear"></div></li>
-                        <li><h4 class="autoLeft fixTop red">Uy tín doanh nghiệp và hiệu quả của chất lượng sản phẩm luôn được đặt lên hàng đầu</h4><div class="clear"></div></li>
-                        <li><h4 class="autoLeft fixTop red">Sống và làm việc theo nguyên tắc “Cả hai cùng thắng”</h4><div class="clear"></div></li>
-                        <li><h4 class="autoLeft fixTop red">Đối với Cổ đông: Tối đa hóa giá trị đầu tư</h4><div class="clear"></div></li>
+                        <i class="fa fa-quote-right red" aria-hidden="true"></i>
+                    </div>
+                    <ul class="list-1 service-list list-left right wow animated bounceInLeft">
+                        <li><h4 class="autoLeft fixTop">Luôn mang lại chất lượng, giá trị trong từng dịch vụ</h4><div class="clear"></div></li>
+                        <li><h4 class="autoLeft fixTop">Uy tín doanh nghiệp luôn được đặt lên hàng đầu</h4><div class="clear"></div></li>
                     </ul>
                 </div>
             </div>

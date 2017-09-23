@@ -1,6 +1,7 @@
 <!-- Header area wrapper starts -->
 <header id="header-wrap">
   <!-- Header area starts -->
+  {{session()->get('detect')}}
   <section id="header">
     <!-- Navbar Starts -->
     <nav class="navbar navbar-expand-md navbar-light bg-light">
