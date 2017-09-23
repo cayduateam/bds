@@ -9,6 +9,7 @@
 
 @section('content')
 <div class="container-fluid">
+	<div class="row">
   <div class="col-md-9 col-xs-12 left_content">
     <h1 class="text-center">Liên hệ với chúng tôi</h1>
     <div class="contact_contect">
@@ -62,5 +63,6 @@
     <div class="line"></div>
     @include('assets.sidebar')
   </div>
+</div>
 </div>
 @endsection

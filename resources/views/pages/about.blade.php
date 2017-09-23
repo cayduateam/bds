@@ -10,6 +10,7 @@
 
 @section('content')
 <div class="container-fluid">
+  <div class="row">
   <div class="col-md-9 col-xs-12 left_content">
     <h1 class="text-center">{{$about->title}}</h1>
     @if($about->section1 != null)
@@ -45,6 +46,7 @@
     <div class="line"></div>
     @include('assets.sidebar')
   </div>
+</div>
 </div>
 
 @endsection

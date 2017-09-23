@@ -11,47 +11,28 @@
 @section('content')
 	{{--slider--}}
     <div id="main_slider" class="carousel slide" data-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img class="d-block w-100" src="images/slider/slide3.jpg" alt="First slide">
-            <div class="content-slider">
-                <h3 class="heading wow animated bounceInDown">KHU ĐÔ THỊ LÊ HỒNG PHONG II</h3>
-                <p class="wow animated bounceInUp">Fully Professional one page template</p>
-                
-            </div>
-            <div class="link-slider wow animated bounce">
-                <a class="btn btn-default slider-btn" href="#">Xem ngay</a>
-            </div>
+        <div class="carousel-inner">
+            @foreach($lastest_product as $key => $product)
+                <div class="carousel-item {!! ($key == 0)?'active':'' !!}">
+                  <img class="d-block w-100" src="images/product/{{$product->slide}}" alt="{{$product->alias}}">
+                    <div class="content-slider">
+                        <h3 class="heading wow animated bounceInDown">{{$product->title}}</h3>
+                        <!-- <p class="wow animated bounceInUp">....</p> -->
+                    </div>
+                    <div class="link-slider wow animated bounce">
+                        <a class="btn btn-default slider-btn" href="{{route('product.view',$product->alias)}}">Xem ngay</a>
+                    </div>
+                </div>
+            @endforeach
         </div>
-        <div class="carousel-item">
-            <img class="d-block w-100" src="images/slider/slide2.jpg" alt="Second slide">
-            <div class="content-slider">
-                <h3 class="heading wow animated bounceInDown">KHU ĐÔ THỊ LÊ HỒNG PHONG II</h3>
-                <p class="animated bounceInUp">Fully Professional one page template</p>
-            </div>
-            <div class="link-slider wow animated bounce">
-                <a class="btn btn-default slider-btn" href="#">Xem ngay</a>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <img class="d-block w-100" src="images/slider/slide1.jpg" alt="Third slide">
-            <div class="content-slider">
-                <h3 class="heading wow animated bounceInDown">KHU ĐÔ THỊ LÊ HỒNG PHONG II</h3>
-                <p class="animated wow bounceInUp">Fully Professional one page template</p>
-            </div>
-            <div class="link-slider wow animated bounce">
-                <a class="btn btn-default slider-btn" href="#">Xem ngay</a>
-            </div>
-        </div>
-      </div>
-      <a class="carousel-control-prev" href="#main_slider" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#main_slider" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
+        <a class="carousel-control-prev" href="#main_slider" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#main_slider" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
     </div>
 	{{--end slider--}}
 
@@ -60,33 +41,37 @@
 	<div class="service container-fluid">
 		<h2 class="title text-center wow animated wobble">DỊCH VỤ CỦA CHÚNG TÔI</h2>
 		<div class="row">
-			<div class="col-md-6 col-xs-12 service-left wow animated bounceInLeft">
+			<div class="col-md-6 col-xs-12 service service-left wow animated bounceInLeft">
                 <ul>
                     <li>
                         <span class="text-right circle">
                             <i class="fa fa-line-chart" aria-hidden="true"></i>
                         </span>
-                        <span class="text">
-                            Chuyên cung cấp các dịch vụ kinh doanh, môi giới, thẩm định, quảng cáo, đấu giá bất động sản
-                        </span>
+                        <span class="text">Cung cấp các dịch vụ kinh doanh, môi giới, thẩm định, quảng cáo, đấu giá bất động sản</span>
                     </li>
                     <li>
                         <span class="text-right circle">
                             <i class="fa fa-university" aria-hidden="true"></i>
                         </span>
-                        <span class="text">
-                            Tư vấn pháp lý, tín dụng, thanh toán chuyển nhượng bất động sản.
-                        </span>
+                        <span class="text">Tư vấn pháp lý, tín dụng, thanh toán chuyển nhượng bất động sản.</span>
                     </li>
                 </ul>
 			</div>
-			<div class="col-md-6 col-xs-12 service-right wow animated bounceInRight">
-                <i class="fa fa-quote-left" aria-hidden="true"></i>
-                <div class="detail">
-                    <p>Vui lòng liên hệ để được tư vẫn hỗ trợ nhanh chóng nhất</p>
-                    <P>Ms Thủy: 0935 044 567</P>
-                </div>
-                <i class="fa fa-quote-right" aria-hidden="true"></i>
+			<div class="col-md-6 col-xs-12 service service-right wow animated bounceInRight">
+                <ul>
+                    <li>
+                        <span class="text-right circle">
+                            <i class="fa fa-handshake-o" aria-hidden="true"></i>
+                        </span>
+                        <span class="text">Môi giới và giới thiệu dự án</span>
+                    </li>
+                    <li>
+                        <span class="text-right circle">
+                            <i class="fa fa-diamond " aria-hidden="true"></i>
+                        </span>
+                        <span class="text">Tư vấn lập dự án đầu tư</span>
+                    </li>
+                </ul>
 			</div>
 		</div>
 	</div>
@@ -156,6 +141,14 @@
                     </div>
                 </div>
                 <div class="col-md-6 col-xs-12 searchbds-right">
+                    <!-- <div class="col-xs-12 service-right wow animated bounceInRight">
+                        <i class="fa fa-quote-left" aria-hidden="true"></i>
+                        <div class="detail">
+                            <p>Vui lòng liên hệ để được tư vẫn hỗ trợ nhanh chóng nhất</p>
+                            <P>Ms Thủy: 0935 044 567</P>
+                        </div>
+                        <i class="fa fa-quote-right" aria-hidden="true"></i>
+                    </div> -->
                     <ul class="list-1 list-left right wow animated bounceInLeft">
                         <li><h4 class="autoLeft fixTop red">Luôn mang lại chất lượng, giá trị của từng sản phẩm, dịch vụ</h4><div class="clear"></div></li>
                         <li><h4 class="autoLeft fixTop red">Uy tín doanh nghiệp và hiệu quả của chất lượng sản phẩm luôn được đặt lên hàng đầu</h4><div class="clear"></div></li>
@@ -167,60 +160,24 @@
         </div>
 	</div>
 	{{--end search with parallax --}}
+
     <p class="line"></p>
-    <div id="lastest_news" class="owl-carousel" data-aos="zoom-in-right">
-        <div class="item">
-          <div class="shadow-effect">
-            <div class="item-img">
-                <img class="img-responsive" src="http://nhatrangreal.com.vn/wp-content/uploads/2017/08/sieu-du-an-san-bay-nha-trang-7082-2.png" alt="">
-            </div>
-            <div class="item-details">
-                <h5>Chicken for two Roasted <span>$21</span></h5>
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <div class="shadow-effect">
-            <div class="item-img">
-                <img class="img-responsive" src="http://nhatrangreal.com.vn/wp-content/uploads/2017/08/tien-do-thang-9-4-636147294906516951-768x576.png" alt="">
-            </div>
-            <div class="item-details">
-                <h5>Chicken for two Roasted <span>$21</span></h5>
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <div class="shadow-effect">
-            <div class="item-img">
-                <img class="img-responsive" src="http://nhatrangreal.com.vn/wp-content/uploads/2017/08/du-an-san-bay-nha-trang-5-768x576.jpg" alt="">
-            </div>
-            <div class="item-details">
-                <h5>Chicken for two Roasted <span>$21</span></h5>
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <div class="shadow-effect">
-            <div class="item-img">
-                <img class="img-responsive" src="http://nhatrangreal.com.vn/wp-content/uploads/2017/08/tien-do-thang-9-4-636147294906516951-768x576.png" alt="">
-            </div>
-            <div class="item-details">
-                <h5>Công bố một số quy hoạch liên quan đến Khu Trung tâm TM-DV-TC-DL Nha Trang<span>$21</span></h5>
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <div class="shadow-effect">
-            <div class="item-img">
-                <img class="img-responsive" src="http://nhatrangreal.com.vn/wp-content/uploads/2017/08/du-an-san-bay-nha-trang-5-768x576.jpg" alt="">
-            </div>
-            <div class="item-details">
-                <h5>Đất nền Nha Trang: Hội tụ đầy đủ yếu tố sinh lời cho nhà đầu tư<span>$21</span></h5>
-            </div>
-          </div>
-        </div>
-    </div>
     {{--lastest news--}}
-    
+    <div id="lastest_news" class="owl-carousel" data-aos="zoom-in-right">
+        @if(isset($lastest_news))
+            @foreach($lastest_news as $news)
+                <div class="item">
+                    <div class="shadow-effect">
+                        <div class="item-img">
+                            <img class="img-responsive" src="images/news/{{$news->image}}" alt="{{$news->alias}}">
+                        </div>
+                        <div class="item-details">
+                            <h5>{{$news->title}}</h5>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        @endif
+    </div>
     {{--end lastest news--}}
 @endsection

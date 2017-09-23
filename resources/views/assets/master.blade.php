@@ -73,7 +73,7 @@
   </script>
   <![endif]-->
 	<!-- Google Font -->
-	<link rel="stylesheet" media="screen" href="fonts/font-awesome/font-awesome.min.css">
+	<link rel="stylesheet" media="screen" href="css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 
 </head>
@@ -101,7 +101,8 @@
 <!-- jQuery Load -->
 <script src="js/jquery.min.js"></script>
 <!-- Bootstrap JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.2/umd/popper.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/owl.carousel.min.js"></script>
 <script src="js/jquery.fancybox.min.js"></script>

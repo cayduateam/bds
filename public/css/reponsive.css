@@ -40,7 +40,21 @@
 
 
 /* Extra small devices (portrait phones, less than 576px)*/
-@media (max-width: 575px){}
+@media (max-width: 575px){
+	.service li{text-align: left}
+	.service li .circle{
+    float:left;
+    margin-left: 0;
+    margin-right: 1vmax;
+    height: 20px;
+    width: 20px;
+	}
+	.service li .circle .fa{
+    font-size: 10px;
+    width: 22px;
+    line-height: 10px;
+	}
+}
 
 /* Small devices (landscape phones, less than 768px)*/
 @media (max-width: 767px){}
