@@ -47,7 +47,11 @@ class PageController extends Controller
      */
     public function index()
     {
-        return view('pages.index');
+        $lastest_news = News::select('title','alias','image','hit')->where('status',1)->orderBy('created_at','DESC')->orderBy('updated_at','DESC')->get();
+        $lastest_product = Product::select('title','alias','price','sale','slide','hit','created_at')->where('status',1)->orderBy('created_at','DESC')->orderBy('updated_at','DESC')->get();
+
+
+        return view('pages.index',compact('lastest_news','lastest_product'));
     }
 
     /*
@@ -59,11 +63,6 @@ class PageController extends Controller
         ->whereIn('parent_id',function($query) use ($category_alias){
             $query->select('id')->from('product_category')->where('alias',$category_alias);
         })->get();
-
-//        $data = array();
-//        foreach($sub_category as $sub){
-//
-//        }
 
         return view('pages.category',compact('parent','subs'));
     }
