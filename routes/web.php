@@ -14,28 +14,27 @@
 // Route::get('/', function () {
 //     return view('pages.index');
 // });
-Route::get('/','PageController@index');
-Route::get('index','PageController@index');
+Route::get('/','PageController@index')->name('home');
+Route::get('index','PageController@index')->name('home');
 
-Route::get('about','PageController@about');
-Route::get('contact','PageController@contact');
+Route::get('about.html','PageController@about');
+Route::get('contact.html','PageController@contact');
 Route::post('contact_send','PageController@sendContact')->name('contact.send');
 
 //Category
 Route::group(['prefix' => 'category'],function(){
-    Route::get('view/{category_alias}',['as' => 'category.view','uses' => 'PageController@viewCategory']);
+    Route::get('{category_alias}.html',['as' => 'category.view','uses' => 'PageController@viewCategory']);
     Route::get('view/sub/{category_alias}',['as' => 'category.view.sub','uses' => 'PageController@viewSubCategory']);
 });
 //Product
 Route::group(['prefix' => 'product'],function(){
-    Route::get('view/{product_alias}',['as' => 'product.view','uses' => 'PageController@viewProduct']);
+    Route::get('{product_alias}.html',['as' => 'product.view','uses' => 'PageController@viewProduct']);
 });
 
-// Route::get('/image', function()
-// {
-//     $img = Image::make('https://i.ytimg.com/vi/cGFP4h1dD90/maxresdefault.jpg')->resize(300, 200);
-//     return $img->response('jpg');
-// });
+//News
+Route::group(['prefix' => 'news'],function(){
+    Route::get('category/{category_alias}.html',['as' => 'newscategory.view','uses' => 'PageController@viewNewsCategory']);
+});
 
 //Dashboard
 Route::get('dashboard/login','DashboardController@login');
@@ -62,3 +61,9 @@ Route::group(['prefix' => 'dashboard','middleware' => 'AdminLogin'],function(){
     Route::resource('about','AboutController');
     Route::resource('footer','FooterController');
 });
+
+// Route::get('/image', function()
+// {
+//     $img = Image::make('https://i.ytimg.com/vi/cGFP4h1dD90/maxresdefault.jpg')->resize(300, 200);
+//     return $img->response('jpg');
+// });

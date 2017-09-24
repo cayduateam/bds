@@ -78,9 +78,7 @@
 
 </head>
 <body id="body">
-	<?php
 
-?>
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];
@@ -91,6 +89,10 @@
     }(document, 'script', 'facebook-jssdk'));
 </script>
 @include('assets.header')
+
+<nav>
+	@yield('breadcrumbs')
+</nav>
 
 <section class="main_container">
 @yield('content')

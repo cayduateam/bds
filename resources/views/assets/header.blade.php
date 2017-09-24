@@ -16,14 +16,13 @@
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-
       <div class="collapse navbar-collapse " id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link {!! ($route == '/')?'active':'' !!}" href="/" role="button" aria-haspopup="true" aria-expanded="false"><h3>HOME</h3></a>
+            <a rel="nofollow" class="nav-link {!! ($route == '/')?'active':'' !!}" href="/" role="button" aria-haspopup="true" aria-expanded="false"><h3>HOME</h3></a>
           </li>
-          <li class="nav-item {!! ($route == 'about')?'active':'' !!}">
-            <a class="nav-link" href="about"><h3>Giới thiệu</h3></a>
+          <li class="nav-item {!! (strpos('/'.$route,'about') != false) ?'active':'' !!}">
+            <a class="nav-link" href="about.html"><h3>Giới thiệu</h3></a>
           </li>
           @if(count($proCat) > 0)
           @foreach($proCat as $cat)
@@ -39,8 +38,19 @@
             </li>
           @endforeach
           @endif
-          <li class="nav-item dropdown {!! ($route == 'contact')?'active':'' !!}">
-            <a class="nav-link" href="contact"><h3>Liên hệ</h3></a>
+
+          @if(count($newscategory) > 0)          
+            <li class="nav-item dropdown">
+              <a class="nav-link" href="#" role="button" aria-haspopup="true" aria-expanded="false"><h3>Tin tức</h3></a>
+                <div class="dropdown-menu">
+                @foreach($newscategory as $cat)
+                  <a class="dropdown-item" href="{{route('newscategory.view',$cat->alias)}}">{{ $cat->name }}</a>
+                @endforeach
+                </div>
+            </li>
+          @endif
+          <li class="nav-item dropdown {!! (strpos('/'.$route,'contact') != false) ?'active':'' !!}">
+            <a class="nav-link" href="contact.html"><h3>Liên hệ</h3></a>
           </li>
         </ul>
       </div>
@@ -48,4 +58,3 @@
     <!-- Navbar Ends -->
   </section>
 </header>
-

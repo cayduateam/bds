@@ -29,7 +29,7 @@ class PageController extends Controller
                 $proCat[$parent->id]['sub'][$sub->id]['alias'] = $sub->alias;
             }
         }
-        $category = Category::select('name','alias')->where('parent_id',0)->where('status',1)->get();
+        $newscategory = Category::select('name','alias')->where('parent_id',0)->where('status',1)->get();
 
         $lastest_news = News::select('title','alias','hit')->where('status',1)->orderBy('hit','desc')->orderBy('created_at','desc')->get();
 
@@ -42,11 +42,14 @@ class PageController extends Controller
         else $detect =  'not_mobile';
         session()->put('detect',$detect);
 
-// echo '<pre>'; print_r(\Route::current()->parameters());
+        // echo '<pre>'; print_r(\Route::current());
+        // echo '<pre>'; print_r(\Request::segments());
+
+
 
         view()->share('route',\Route::current()->uri());
         view()->share('proCat',$proCat);
-        view()->share('category',$category);
+        view()->share('newscategory',$newscategory);
         view()->share('lastest_news',$lastest_news);
         view()->share('footer',$footer);
         view()->share('detect',$detect);
@@ -97,11 +100,42 @@ class PageController extends Controller
     public function viewProduct($product_alias){
         $product = Product::where('alias',$product_alias)->first();
         $productArray = json_decode(json_encode($product),true);
-//        $subs = ProductCategory::select('id','name','alias','hit')
-//            ->whereIn('parent_id',function($query) use ($category_alias){
-//                $query->select('id')->from('product_category')->where('alias',$category_alias);
-//            })->get();
-        return view('pages.product',compact('product','productArray'));
+
+        $category = array();
+        $cat = $product->category_enable;
+        $parent = $this->getParentCat($cat[0]->parent_id);
+
+        $category['parent']['alias'] = $parent->alias;
+        $category['parent']['name'] = $parent->name;
+        $category['sub']['alias'] = $cat[0]->alias;
+        $category['sub']['name'] = $cat[0]->name;
+
+
+        if($productArray != null){
+            $imageArray = explode('%', $productArray['content_image']);
+            foreach($imageArray as $key => $image){
+                $imagelink = ProductImage::select('link')->where('id',$image)->first();
+                $imageArray[$key] = $imagelink->link;
+            }
+
+            $productArray['content_image_detail'] = $imageArray;
+        }
+
+        return view('pages.product',compact('product','productArray','category'));
+    }
+    
+    public function viewNewsCategory($category_alias){
+        // $parent = ProductCategory::where('alias',$category_alias)->first();
+        // $subs = ProductCategory::select('id','name','alias','hit')
+        // ->whereIn('parent_id',function($query) use ($category_alias){
+        //     $query->select('id')->from('product_category')->where('alias',$category_alias);
+        // })->get();
+echo 'here';die;
+        return view('pages.newscategory');
+    }
+
+    public function getParentCat($parent_id){
+        return ProductCategory::select('path','name','alias')->where('id',$parent_id)->first();
     }
 
     public function about(){

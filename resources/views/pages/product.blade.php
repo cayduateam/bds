@@ -6,7 +6,14 @@
 @section('script')
 <script src="js/responsive-tabs.js"></script>
 <script src="js/product.js"></script>
+@endsection
 
+@section('breadcrumbs')
+<ol class="breadscrumbs">
+  <li ><a href="#" rel="nofollow"><h3>Home</h3></a></li>
+  <li><a href="{!! route('category.view',$category['parent']['alias']) !!}"><h3>{!! $category['parent']['name'] !!}</h3></a></li>
+  <li><a href="#" rel="nofollow"><h3>{{$product->title}}</h3></a></li>
+</ol>
 @endsection
 
 @section('content')
@@ -15,13 +22,11 @@
   <div class="col-md-9 col-xs-12 left_content">
     <h1 class="text-center">{{$productArray['title']}}</h1>
     <p class="hidden">{!!bodauImage($productArray['alias'])!!}</p>
-    <div class="product_header clearfix row">
+    <div class="product_header clearfix">
       <!-- start slide -->
       <div id="product_slide" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
-          <?php
-            $i=0;
-          ?>
+          <?php $i=0 ?>
           @foreach($product->images as $image)
             <?php
               $image_name = explode('_',$image->link);
@@ -34,12 +39,15 @@
           @endforeach
         </div>
 
-        <a class="left carousel-control" href="#product_slide" role="button" data-slide="prev">
-          <span class="glyphicon glyphicon-chevron-left"></span>
+        <a class="carousel-control-prev" href="#product_slide" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
         </a>
-        <a class="right carousel-control" href="#product_slide" role="button" data-slide="next">
-          <span class="glyphicon glyphicon-chevron-right"></span>
+        <a class="carousel-control-next" href="#product_slide" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
         </a>
+
         <ul class="thumbnails-carousel clearfix">
           @foreach($product->images as $image)
             <?php
@@ -57,31 +65,22 @@
         </div>
       </div>
     </div>
-    <div class="product_content">
-      <!-- <div class="tabs_class" id="listTabs">
-        @for($i=1; $i< 4; $i++)
-          @if($productArray['content'.$i] != null)
-            <div>
-              <h2>{{($productArray['content'.$i.'_title'] != null)? subString($product['content'.$i.'_title'],40) : 'Information'}}</h2>
-              <div>
-                {!!$productArray['content'.$i]!!}
-              </div>
-            </div>
-          @endif
-        @endfor
-      </div> -->
 
-      <ul class="tabs_class d-sm-none">
+    <div class="product_content">
+      <ul class="tabs_class d-none d-sm-block">
         @for($i=1; $i< 4; $i++)
           @if($productArray['content'.$i] != null)
             <li>
             <?php
               $alias = '#'.$productArray['alias'].'-'.bodauimage($productArray['content'.$i.'_title']);
             ?>
-              <a class="tab_class_link" href="{{route('product.view',$productArray['alias'])}}{!!$alias!!}">{{($productArray['content'.$i.'_title'] != null)? subString($product['content'.$i.'_title'],40) : 'Information'}}</a>
+              <a class="tab_class_link" href="{{route('product.view',$productArray['alias'])}}{!!$alias!!}"><h5>{{($productArray['content'.$i.'_title'] != null)? subString($product['content'.$i.'_title'],40) : 'Information'}}</h5></a>
             </li>
           @endif
         @endfor
+        <li>
+          <a class="tab_class_link" href="{{route('product.view',$productArray['alias'])}}#content_image"><h5>{{($productArray['content_image_title'] != null)? subString($product['content_image_title'],40) : 'Images'}}</h5></a>
+        </li>
       </ul>
       <div class="content_class">
         @for($i=1; $i< 4; $i++)
@@ -89,24 +88,40 @@
             <?php
               $alias = $productArray['alias'].'-'.bodauimage($productArray['content'.$i.'_title']);
             ?>
-            <div >
-              <p id="{!!$alias!!}">{{($productArray['content'.$i.'_title'] != null)? subString($product['content'.$i.'_title'],40) : 'Information'}}</p>
+            <div>
+              <h2 id="{!!$alias!!}">{{($productArray['content'.$i.'_title'] != null)? subString($product['content'.$i.'_title'],40) : 'Information'}}</h2>
               <div>
                 {!!$productArray['content'.$i]!!}
               </div>
             </div>
           @endif
         @endfor
-      </div>
+        
+        @if($product->content_image != null )
+          <div>
+            <h2 id="content_image">{{($productArray['content_image_title'] != null)? subString($product['content_image_title'],40) : 'Images'}}</h2>
+            <div class="row">
+            @foreach($productArray['content_image_detail'] as $image)
+              <div class="col-12 col-sm-6 col-md-4">
+                <a href="images/product/{{$image}}" data-fancybox="images">
+                  <img src="images/product/{{$image}}" alt="{{$image}}" title="{{$image}}"/>
+                </a>
+              </div>                
+            @endforeach
+            </div>
+          </div>
+        @endif
 
+      </div>
     </div>
+
   </div>
   <div class="col-md-3 hidden-sm-down sidebar">
-    <aside class="product_summary">
+    <!-- <aside class="product_summary">
       <div class="animated bounceInRight wow">
         {!!$productArray['summary']!!}
       </div>
-    </aside>
+    </aside> -->
     <aside class="service-contact wow animated bounceInRight">
         <i class="fa fa-quote-left" aria-hidden="true"></i>
         <div class="detail">

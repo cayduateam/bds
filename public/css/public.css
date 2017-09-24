@@ -165,10 +165,13 @@ h6, .h6{font-size: 0.8vmax}
 
 /* sidebar */
 .sidebar{
-  background: #fffff9
+  background: #f9f9f9
 }
 .sidebar aside{
 	margin:3vmax 0;
+}
+.sidebar aside:first-child{
+  margin-top:0;
 }
 
 .search_bds{
@@ -224,10 +227,46 @@ h6, .h6{font-size: 0.8vmax}
 }
 /* sidebar end */
 
+/*breadscrumb*/
+.breadscrumbs{
+  border: 1px solid #efefef;
+  margin: 2vmin 0;
+  padding: 0;
+  width: 99%;
+  display: block;
+  overflow: hidden;
+}
+.breadscrumbs li {
+  list-style: none;
+  float: left;
+}
+.breadscrumbs li a{
+  padding-left: .75em;
+  display: block;
+  padding: 10px 25px 10px 25px;
+  background: url('../images/crumbs.gif')no-repeat right;
+}
+.breadscrumbs li:last-child a{
+  background: none;
+}
+.breadscrumbs li h3{
+  margin: 0;
+  font-size: 1vmax;
+}
+
+/*end breadscrumb*/
+
 /*content*/
 .left_content, .sidebar{
 	padding-top: 2vmax;
-	background: #fff;
+}
+.left_content{
+
+}
+.left_content img{
+  max-width:100%;
+  margin: 1vmin auto;
+  display: block;
 }
 /*end content*/
 
@@ -256,14 +295,6 @@ h6, .h6{font-size: 0.8vmax}
 .category_header .title h1{
 	margin:0;
 	padding: 0;
-}
-.left_content{
-
-}
-.left_content img{
-	max-width:100%;
-  margin: 1vmin auto;
-  display: block;
 }
 .product-item .item-img{
   height: 300px;
