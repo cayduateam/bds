@@ -232,10 +232,10 @@ h6, .h6{font-size: 0.8vmax}
 /*end content*/
 
 /*category*/
-.content_header{
+.category_header{
   position: relative;
 }
-.content_header .title{
+.category_title{
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -245,18 +245,15 @@ h6, .h6{font-size: 0.8vmax}
   text-transform: uppercase;
   padding:8px 0;
   background: rgba(255,251,247,0.33);
-background: -moz-linear-gradient(left, rgba(255,251,247,0.33) 0%, rgba(255,153,0,0.33) 50%, rgba(255,231,201,0.32) 100%);
-background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255,251,247,0.33)), color-stop(50%, rgba(255,153,0,0.33)), color-stop(100%, rgba(255,231,201,0.32)));
-background: -webkit-linear-gradient(left, rgba(255,251,247,0.33) 0%, rgba(255,153,0,0.33) 50%, rgba(255,231,201,0.32) 100%);
-background: -o-linear-gradient(left, rgba(255,251,247,0.33) 0%, rgba(255,153,0,0.33) 50%, rgba(255,231,201,0.32) 100%);
-background: -ms-linear-gradient(left, rgba(255,251,247,0.33) 0%, rgba(255,153,0,0.33) 50%, rgba(255,231,201,0.32) 100%);
-background: linear-gradient(to right, rgba(255,251,247,0.33) 0%, rgba(255,153,0,0.33) 50%, rgba(255,231,201,0.32) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fffbf7', endColorstr='#ffe7c9', GradientType=1 );
-
-
-
+  background: -moz-linear-gradient(left, rgba(255,251,247,0.33) 0%, rgba(255,153,0,0.33) 50%, rgba(255,231,201,0.32) 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255,251,247,0.33)), color-stop(50%, rgba(255,153,0,0.33)), color-stop(100%, rgba(255,231,201,0.32)));
+  background: -webkit-linear-gradient(left, rgba(255,251,247,0.33) 0%, rgba(255,153,0,0.33) 50%, rgba(255,231,201,0.32) 100%);
+  background: -o-linear-gradient(left, rgba(255,251,247,0.33) 0%, rgba(255,153,0,0.33) 50%, rgba(255,231,201,0.32) 100%);
+  background: -ms-linear-gradient(left, rgba(255,251,247,0.33) 0%, rgba(255,153,0,0.33) 50%, rgba(255,231,201,0.32) 100%);
+  background: linear-gradient(to right, rgba(255,251,247,0.33) 0%, rgba(255,153,0,0.33) 50%, rgba(255,231,201,0.32) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fffbf7', endColorstr='#ffe7c9', GradientType=1 );
 }
-.content_header .title h1{
+.category_header .title h1{
 	margin:0;
 	padding: 0;
 }
@@ -265,8 +262,51 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fffbf7', end
 }
 .left_content img{
 	max-width:100%;
-  margin: 2vmax auto;
+  margin: 1vmin auto;
   display: block;
+}
+.product-item .item-img{
+  height: 300px;
+}
+.product-item .item-img img{
+  min-height: 300px;
+}
+.view {
+  float: left;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  cursor: default;
+}
+
+.view .mask, .view .content {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+}
+.fifth-effect img {
+  transition: all 0.3s ease-in;
+}
+
+.fifth-effect .mask {
+  cursor: pointer;
+  visibility: visible;
+  border: 50px solid rgba(255, 253, 248, 0.7);
+  box-sizing: border-box;
+  transition: all 0.4s cubic-bezier(0.940, 0.850, 0.100, 0.620);
+}
+
+.fifth-effect:hover .mask {
+  border:0px double rgba(0,0,0,0.7);
+  opacity:0;
+  visibility:hidden;
+}
+
+.fifth-effect:hover img {
+  opacity:1;
 }
 /*and category*/
 
@@ -284,11 +324,25 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fffbf7', end
   height: 100%;
   z-index: 9998;
 }
-.product-item img{
-  max-height: 300px;
+.product-item{
+  height: 350px;
   overflow: hidden;
+  /*position: relative;*/
+  text-align: center;
+  margin: 2vmax 0;
 }
-
+.product-item .title{
+  /*position: absolute;*/
+  /*width: 100%;
+  text-align: center;
+  top: 50%;
+  margin-top: -20px;*/
+  z-index: 10;
+}
+.product-item .title h2{
+  font-size: 1.4vmax;
+  text-transform: uppercase;
+}
 /*end product*/
 
 /*about*/

@@ -42,7 +42,9 @@ class PageController extends Controller
         else $detect =  'not_mobile';
         session()->put('detect',$detect);
 
-        view()->share('route',\Route::getCurrentRoute()->uri());
+// echo '<pre>'; print_r(\Route::current()->parameters());
+
+        view()->share('route',\Route::current()->uri());
         view()->share('proCat',$proCat);
         view()->share('category',$category);
         view()->share('lastest_news',$lastest_news);

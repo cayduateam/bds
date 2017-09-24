@@ -12,27 +12,32 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-9 col-xs-12 left_content">
-			<div class="content_header">
+			<div class="category_header">
 				@if(session()->get('detect') != 'mobile')
-			    <div class="parallax" data-speed="0.5" style="height:220px;background: url('images/productCategory/{{$parent->image}}') 50% -79.5px no-repeat;"></div>
+			    <div class="parallax d-none d-sm-block" data-speed="0.5" style="height:220px;background: url('images/productCategory/{{$parent->image}}') 50% -79.5px no-repeat;"></div>
 		    @else
-			    <img alt="{{$parent->alias}}" title="{{$parent->alias}}" src="images/productCategory/{{$parent->image}}">
+			    <img class="d-none d-sm-block" alt="{{$parent->alias}}" title="{{$parent->alias}}" src="images/productCategory/{{$parent->image}}">
 		    @endif
-				<div class="title">
+				<div class="title category_title">
 					<h1>{{$parent->name}}</h1>
 				</div>
 			</div>
+			<hr/>
 			<div class="content_tabs">
 				<div class="tabs_class text_center" id="listTabs">
 					@foreach($subs as $sub)
 					<div>
 						<h2>{{$sub->name}}</h2>
 						<div class="row">
+
 							@foreach($sub->product_enable as $product)
-									<a class="product-item col-12 col-sm-6" href="{{route('product.view',$product->alias)}}">
-										<img alt="{{$product->alias}}" title="{{$product->alias}}" src="images/product/{{$product->thumb}}">
-										<p class="title">{{$product->title}}</p>
-									</a>
+								<a class="product-item col-12 col-sm-6 " href="{{route('product.view',$product->alias)}}">
+									<div class="title"><h2>{{$product->title}}</h2></div>
+									<div class="item-img view fifth-effect">
+										<img class="img-thumbnail rounded" alt="{{$product->alias}}" title="{{$product->alias}}" src="images/product/{{$product->thumb}}">
+										<div class="mask"></div>
+									</div>
+								</a>
 							@endforeach
 						</div>
 					</div>

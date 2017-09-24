@@ -50,13 +50,37 @@
     width: 22px;
     line-height: 10px;
 	}
-	
+	.product-item{height: 200px}
+	.product-item .title h2{
+	  font-size: 2vmax;
+	}
+	.product-item .item-img{
+	  height: 180px;
+	}
+	.product-item .item-img img{
+	  min-height: 150px;
+	}
+	.category_title{
+    display: block;
+    position: relative;
+    color: #000015;
+	}
 }
 
 /* Small devices (landscape phones, less than 768px)*/
 @media (max-width: 767px){
 	.service-contact{
 		margin:1vmax 0;
+	}
+	.product-item{height: 250px}
+	.product-item .title h2{
+	  font-size: 2.2vmax;
+	}
+	.product-item .item-img{
+	  height: 220px;
+	}
+	.product-item .item-img img{
+	  min-height: 220px;
 	}
 }
 
