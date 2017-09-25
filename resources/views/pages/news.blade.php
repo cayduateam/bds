@@ -39,7 +39,7 @@
 			<h2>Có thể bạn thích đọc thêm</h2>
 			<ul class="">
 				@foreach($news_related as $relate)
-					<li><a href="route('news.view',$relate->alias)">{!!$relate->title!!}</a></li>
+					<li><a href="{{route('news.view',$relate->alias)}}">{!!$relate->title!!}</a></li>
 				@endforeach
 			</ul>
 		</div>

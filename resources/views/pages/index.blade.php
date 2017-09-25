@@ -169,12 +169,14 @@
             @foreach($lastest_news as $news)
                 <div class="item">
                     <div class="shadow-effect">
-                        <div class="item-img">
-                            <img class="img-responsive" src="images/news/{{$news->image}}" alt="{{$news->alias}}">
-                        </div>
-                        <div class="item-details">
-                            <h5>{{$news->title}}</h5>
-                        </div>
+                        <a href="{{route('news.view',$news->alias)}}">
+                            <div class="item-img">
+                                <img class="img-thumbnail" src="images/news/{{$news->image}}" alt="{{$news->alias}} title="{{$news->alias}}">
+                            </div>
+                            <div class="item-details">
+                                <h5>{{$news->title}}</h5>
+                            </div>
+                        </a>
                     </div>
                 </div>
             @endforeach
