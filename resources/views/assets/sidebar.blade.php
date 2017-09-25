@@ -64,7 +64,7 @@
 		@foreach($lastest_news as $news)
 		<li>
 			<i class="fa fa-angle-right" aria-hidden="true"></i>
-			<a href="#">{{$news->title}}</a>
+			<a href="{{route('news.view',$news->alias)}}">{{$news->title}}</a>
 		</li>
 		@endforeach
 
