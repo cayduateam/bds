@@ -87,6 +87,5 @@ $(document).ready(function(){
 	  thumbs : {
 	    autoStart : true
 	  }
-	})
-
+	});
 });

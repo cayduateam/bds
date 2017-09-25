@@ -82,10 +82,12 @@ h6, .h6{font-size: 0.8vmax}
   padding: 0;
   line-height: 22px;
   text-transform: uppercase;
+  display: inline;
 }
 .navbar-nav .nav-item h3:hover{
   color: #dc5800;
 }
+
 /*end main menu*/
 
 

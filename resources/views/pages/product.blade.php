@@ -12,7 +12,7 @@
 <ol class="breadscrumbs">
   <li ><a href="#" rel="nofollow"><h3>Home</h3></a></li>
   <li><a href="{!! route('category.view',$category['parent']['alias']) !!}"><h3>{!! $category['parent']['name'] !!}</h3></a></li>
-  <li><a href="#" rel="nofollow"><h3>{{$product->title}}</h3></a></li>
+  <li><a href="#"><h3>{{$product->title}}</h3></a></li>
 </ol>
 @endsection
 

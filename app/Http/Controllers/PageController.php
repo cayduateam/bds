@@ -125,13 +125,19 @@ class PageController extends Controller
     }
     
     public function viewNewsCategory($category_alias){
-        // $parent = ProductCategory::where('alias',$category_alias)->first();
-        // $subs = ProductCategory::select('id','name','alias','hit')
-        // ->whereIn('parent_id',function($query) use ($category_alias){
-        //     $query->select('id')->from('product_category')->where('alias',$category_alias);
-        // })->get();
-echo 'here';die;
-        return view('pages.newscategory');
+
+        $category = Category::where('alias',$category_alias)->first();
+        $news = $category->news_enable;
+
+        return view('pages.newscategory',compact('category'));
+    }
+
+    public function viewNews($news_alias)
+    {
+        $news = News::where('alias',$news_alias)->first();
+
+        $news_related = News::select('title','alias')->whereNotIn('id',[$news->id])->orderBy('created_at','DESC')->offset(0)->limit(10)->get();
+        return view('pages.news',compact('news','news_related'));
     }
 
     public function getParentCat($parent_id){

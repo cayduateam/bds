@@ -52,5 +52,10 @@ jQuery( document ).ready(function() {
     // $('#listTabs').responsiveTabs();
     //end list tab
 
+    $('ul.navbar-nav li.dropdown').hover(function() {
+      $(this).find('.dropdown-menu').stop(true, true).delay(90).slideDown(250);
+    }, function() {
+      $(this).find('.dropdown-menu').stop(true, true).delay(90).slideUp(250);
+    });
 });
 //end parallax

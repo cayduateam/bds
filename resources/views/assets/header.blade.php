@@ -38,17 +38,21 @@
             </li>
           @endforeach
           @endif
-
-          @if(count($newscategory) > 0)          
+          
+          
+          @if(count($newscategory) > 0)
             <li class="nav-item dropdown">
-              <a class="nav-link" href="#" role="button" aria-haspopup="true" aria-expanded="false"><h3>Tin tức</h3></a>
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><h3>Tin tức</h3></a>
                 <div class="dropdown-menu">
                 @foreach($newscategory as $cat)
                   <a class="dropdown-item" href="{{route('newscategory.view',$cat->alias)}}">{{ $cat->name }}</a>
+                  <div class="dropdown-divider"></div>
                 @endforeach
                 </div>
             </li>
           @endif
+          
+
           <li class="nav-item dropdown {!! (strpos('/'.$route,'contact') != false) ?'active':'' !!}">
             <a class="nav-link" href="contact.html"><h3>Liên hệ</h3></a>
           </li>

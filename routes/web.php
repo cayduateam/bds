@@ -34,6 +34,7 @@ Route::group(['prefix' => 'product'],function(){
 //News
 Route::group(['prefix' => 'news'],function(){
     Route::get('category/{category_alias}.html',['as' => 'newscategory.view','uses' => 'PageController@viewNewsCategory']);
+    Route::get('{news_alias}.html',['as' => 'news.view','uses' => 'PageController@viewNews']);
 });
 
 //Dashboard
